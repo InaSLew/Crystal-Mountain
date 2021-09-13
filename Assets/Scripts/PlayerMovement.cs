@@ -6,12 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private float Speed = 8f;
 
-    // void Start()
-    // {
-    //     
-    // }
-
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(Speed * Time.deltaTime, 0, 0);
     }
