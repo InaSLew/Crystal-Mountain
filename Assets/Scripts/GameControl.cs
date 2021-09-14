@@ -26,19 +26,12 @@ public class GameControl : MonoBehaviour
     {
         Debug.Log("YOU DIED :'(");
         _totalAttempts += 1;
-        StopPlayer();
         Invoke(nameof(ResetGame), 3f);
     }
     
     private void ONPlayerWin(Player obj)
     {
         Debug.Log("YOU WIN!!");
-        StopPlayer();
-    }
-
-    private void StopPlayer()
-    {
-        _player.GetComponent<PlayerMovement>()._speed = 0;
     }
 
     private void ResetGame()

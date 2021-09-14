@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float _speed = 5f;
-    private float _jumpVelocity = 6f;
+    private float _speed = 2f;
+    private float _jumpVelocity = 5f;
     private Rigidbody2D _rb;
     private bool _isGround;
 
@@ -23,13 +23,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveForward()
     {
-        transform.Translate(_speed * Time.deltaTime, 0, 0);
+        _rb.AddForce(Vector2.right * _speed, ForceMode2D.Force);
     }
     
     private void SpaceToJump()
     {
         if (!Input.GetKeyDown(KeyCode.Space) || !_isGround) return;
-        _rb.velocity = Vector2.up * _jumpVelocity;
+        _rb.AddForce(Vector2.up * _jumpVelocity, ForceMode2D.Impulse);
         _isGround = false;
     }
 

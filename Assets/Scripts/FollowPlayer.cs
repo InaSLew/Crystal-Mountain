@@ -14,7 +14,7 @@ public class FollowPlayer : MonoBehaviour
         _offset = gameObject.transform.position;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         transform.position = player.transform.position + _offset;
     }
