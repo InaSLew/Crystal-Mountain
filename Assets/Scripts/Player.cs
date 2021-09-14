@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     {
         var enemyObj = enemy.gameObject;
         var playerPosition = gameObject.transform.position;
-        if (enemyObj.name == "Spike1" && enemyObj.transform.position.y < playerPosition.y)
+        if (enemyObj.name.Contains("SquareSpike") && enemyObj.transform.position.y < playerPosition.y)
         {
             Debug.Log("HIT SAFE SIDE ON SPIKE");
             return;

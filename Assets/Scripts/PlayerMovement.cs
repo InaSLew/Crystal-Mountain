@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name != "Spike" && other.gameObject.name != "Spike1") CollideWithGround();
+        if (!other.gameObject.CompareTag("Enemy")) CollideWithGround();
     }
 
     private void CollideWithGround()
