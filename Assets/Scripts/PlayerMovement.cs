@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float _speed = 1.5f;
-    private float _jumpVelocity = 3.8f;
+    private float _speed = 1.25f;
+    private float _jumpVelocity = 5f;
     private Rigidbody2D _rb;
     private bool _isGround; //need to refactor this later
 
@@ -35,12 +35,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!other.gameObject.CompareTag("Enemy")) CollideWithGround();
-    }
-
-    private void CollideWithGround()
-    {
-        Debug.Log("ON THE GROUND");
+        //if (!other.gameObject.CompareTag("Enemy")) CollideWithGround();
         _isGround = true;
     }
+
+    // private void CollideWithGround()
+    // {
+    //     Debug.Log("ON THE GROUND");
+    //     _isGround = true;
+    // }
 }
