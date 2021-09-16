@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float _speed = 2f;
-    private float _jumpVelocity = 4f;
+    private float _speed = 1.5f;
+    private float _jumpVelocity = 3.8f;
     private Rigidbody2D _rb;
-    private bool _isGround;
+    private bool _isGround; //need to refactor this later
 
     private void Start()
     {
