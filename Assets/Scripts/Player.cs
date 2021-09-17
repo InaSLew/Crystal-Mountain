@@ -1,16 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public event Action<Player> ONPlayerDeath;
     public event Action<Player> ONPlayerWin;
-    public AudioSource death;
-    public AudioSource throughTheGate;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -26,7 +20,6 @@ public class Player : MonoBehaviour
             Debug.Log("HIT SAFE SIDE ON SPIKE");
             return;
         }
-        death.Play();
         ONPlayerDeath?.Invoke(this);
     }
     
@@ -38,13 +31,11 @@ public class Player : MonoBehaviour
     
     private void CollideWithGate()
     {
-        throughTheGate.Play();
         ONPlayerWin?.Invoke(this);
     }
 
     private void PlayerIsFalling()
     {
-        death.Play();
         ONPlayerDeath?.Invoke(this);
     }
 }

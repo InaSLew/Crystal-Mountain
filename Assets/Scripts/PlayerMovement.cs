@@ -1,14 +1,12 @@
-using System;
-using Packages.Rider.Editor.UnitTesting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float _speed = 3f;
-    private float _jumpVelocity = 15f;
+    private float _speed = 4f;
+    private float _jumpVelocity = 15.3f;
     private Rigidbody2D _rb;
     private bool _isGround = true;
-    private const float MAXSpeed = 5f;
+    private const float MAXSpeed = 5.5f;
     public AudioSource jump;
 
 

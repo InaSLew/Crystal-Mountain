@@ -1,11 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using Timer = System.Timers.Timer;
 
 public class GameControl : MonoBehaviour
 {
@@ -19,6 +13,8 @@ public class GameControl : MonoBehaviour
     
     public Text numberFailAttempts;
     public Text status;
+    public AudioSource death;
+    public AudioSource throughTheGate;
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -34,6 +30,8 @@ public class GameControl : MonoBehaviour
 
     private void ONPlayerDeath(Player obj)
     {
+        death.Play();
+        _player.SetActive(false);
         status.text = _deathMsg;
         _totalAttempts += 1;
         numberFailAttempts.text = _totalAttempts.ToString();
@@ -42,13 +40,17 @@ public class GameControl : MonoBehaviour
 
     private void ONPlayerWin(Player obj)
     {
+        throughTheGate.Play();
+        _player.SetActive(false);
         status.text = _winMsg;
     }
 
     private void ResetGame()
     {
+        _player.SetActive(true);
         _player.transform.position = _playerOriginalPosition;
         _camera.transform.position = _cameraOriginalPosition;
         status.text = "";
+        Time.timeScale = 1;
     }
 }
