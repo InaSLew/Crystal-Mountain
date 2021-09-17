@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Timer = System.Timers.Timer;
 
 public class GameControl : MonoBehaviour
 {
@@ -11,6 +14,8 @@ public class GameControl : MonoBehaviour
     private GameObject _camera;
     private Vector2 _playerOriginalPosition;
     private Vector2 _cameraOriginalPosition;
+    private string _deathMsg = "YOU DIED :'( RESTART IN 3 seconds...";
+    private string _winMsg = "YOU WIN :D";
     
     public Text numberFailAttempts;
     public Text status;
@@ -26,18 +31,18 @@ public class GameControl : MonoBehaviour
 
         numberFailAttempts.text = _totalAttempts.ToString();
     }
-    
+
     private void ONPlayerDeath(Player obj)
     {
-        status.text = "YOU DIED :'(";
+        status.text = _deathMsg;
         _totalAttempts += 1;
         numberFailAttempts.text = _totalAttempts.ToString();
         Invoke(nameof(ResetGame), 3f);
     }
-    
+
     private void ONPlayerWin(Player obj)
     {
-        status.text = "YOU WIN :D";
+        status.text = _winMsg;
     }
 
     private void ResetGame()
