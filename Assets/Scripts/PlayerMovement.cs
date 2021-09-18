@@ -18,17 +18,13 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         MoveForward();
+        RegulateToMaxSpeed();
         if (Input.GetKeyDown(KeyCode.Space) && _isGround) Jump();
     }
-
+    
     private void MoveForward()
     {
         _rb.AddForce(Vector2.right * _speed, ForceMode2D.Force);
-    }
-
-    private void FixedUpdate()
-    {
-        RegulateToMaxSpeed();
     }
 
     private void RegulateToMaxSpeed()
