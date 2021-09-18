@@ -1,12 +1,13 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float _speed = 4f;
-    private float _jumpVelocity = 15.3f;
+    private float _speed = 5.8f;
+    private float _jumpVelocity = 4.5f;
     private Rigidbody2D _rb;
     private bool _isGround = true;
-    private const float MAXSpeed = 5.5f;
+    private const float MAXSpeed = 6f;
     public AudioSource jump;
 
 
@@ -14,14 +15,17 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
     }
-
-    private void Update()
+    private void FixedUpdate()
     {
         MoveForward();
         RegulateToMaxSpeed();
+    }
+
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && _isGround) Jump();
     }
-    
+
     private void MoveForward()
     {
         _rb.AddForce(Vector2.right * _speed, ForceMode2D.Force);
