@@ -3,13 +3,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float _speed = 5.8f;
-    private float _jumpVelocity = 4.5f;
+    private float _speed = 4.5f;
+    private float _jumpVelocity = 10f;
     private Rigidbody2D _rb;
     private bool _isGround = true;
-    private const float MAXSpeed = 6f;
+    private const float MAXSpeed = 5f;
     public AudioSource jump;
-
 
     private void Start()
     {
