@@ -1,6 +1,6 @@
 # The Impossible Game - Crystal Mountain
 
-✏ This game was made between 13 - 17/09/2021 for learning Unity basics and source control with Git.
+✏ This game was made between 13 - 17/09/2021 as a school project
 
 ✏ All the pixel art sprites and background image are made by me.
 
