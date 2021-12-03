@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float _speed = 4.5f;
-    private float _jumpVelocity = 10f;
+    [SerializeField] private float speed;
+    // private float _jumpVelocity = 10f;
     private Rigidbody2D _rb;
-    private bool _isGround = true;
-    private const float MAXSpeed = 5f;
-    public AudioSource jump;
+    // private bool _isGround = true;
+    // public AudioSource jump;
 
     private void Start()
     {
@@ -15,35 +14,29 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        MoveForward();
-        RegulateToMaxSpeed();
+        MoveRight();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _isGround) Jump();
+        // if (Input.GetKeyDown(KeyCode.Space) && _isGround) Jump();
     }
 
-    private void MoveForward()
+    private void MoveRight()
     {
-        _rb.AddForce(Vector2.right * _speed, ForceMode2D.Force);
+        _rb.velocity = Vector2.right * speed * Time.deltaTime;
     }
 
-    private void RegulateToMaxSpeed()
-    {
-        if (_rb.velocity.magnitude > MAXSpeed) _rb.velocity = _rb.velocity.normalized * MAXSpeed;
-    }
-
-    private void Jump()
-    {
-        _rb.AddForce(Vector2.up * _jumpVelocity, ForceMode2D.Impulse);
-        jump.Play();
-        _isGround = false;
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        _isGround = true;
-        if (!other.gameObject.CompareTag("Enemy")) return;
-    }
+    // private void Jump()
+    // {
+    //     _rb.AddForce(Vector2.up * _jumpVelocity, ForceMode2D.Impulse);
+    //     jump.Play();
+    //     _isGround = false;
+    // }
+    //
+    // private void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     _isGround = true;
+    //     if (!other.gameObject.CompareTag("Enemy")) return;
+    // }
 }
