@@ -5,8 +5,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpVelocity;
     [SerializeField] private AudioSource jumpSound;
+    [SerializeField] private BooleanValue isOnGround;
     private Rigidbody2D rb;
-    private bool isGround = true;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround) Jump();
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround.BoolValue) Jump();
     }
 
     private void MoveRight()
@@ -31,11 +31,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.AddForce(transform.up * jumpVelocity, ForceMode2D.Impulse);
         jumpSound.Play();
-        isGround = false;
+        isOnGround.BoolValue = false;
     }
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground")) isGround = true;
+        if (other.gameObject.CompareTag("Ground")) isOnGround.BoolValue = true;
     }
 }

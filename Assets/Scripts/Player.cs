@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     public event Action<Player> ONPlayerDeath;
     public event Action<Player> ONPlayerWin;
+    [SerializeField] private BooleanValue isOnGround;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -15,7 +16,11 @@ public class Player : MonoBehaviour
     {
         var obj = other.gameObject;
         var playerPosition = gameObject.transform.position;
-        if (obj.TryGetComponent(out SquareSpike square) && obj.transform.position.y < playerPosition.y) return;
+        if (obj.TryGetComponent(out SquareSpike square) && obj.transform.position.y < playerPosition.y)
+        {
+            isOnGround.BoolValue = true;
+            return;
+        }
         ONPlayerDeath?.Invoke(this);
     }
     
