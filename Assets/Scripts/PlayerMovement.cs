@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float jumpVelocity;
+    [SerializeField] private float jumpForce;
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private BooleanValue isOnGround;
     private Rigidbody2D rb;
@@ -12,24 +11,17 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    private void FixedUpdate()
-    {
-        MoveRight();
-    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround.BoolValue) Jump();
-    }
-
-    private void MoveRight()
-    {
-        rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
+        if (!Input.GetKeyDown(KeyCode.Space) || !isOnGround.BoolValue) return;
+        Jump();
     }
 
     private void Jump()
     {
-        rb.AddForce(transform.up * jumpVelocity, ForceMode2D.Impulse);
+        rb.velocity = Vector2.zero;
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         jumpSound.Play();
         isOnGround.BoolValue = false;
     }
