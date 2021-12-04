@@ -5,7 +5,7 @@ public class GameControl : MonoBehaviour
 {
     private int totalAttempts = 0;
     private GameObject player;
-    private GameObject _camera;
+    private GameObject cam;
     private Vector2 playerOriginalPosition;
     private Vector2 cameraOriginalPosition;
     private readonly string deathMsg = "YOU DIED :'( RESTART IN 3 seconds...";
@@ -22,8 +22,8 @@ public class GameControl : MonoBehaviour
         player.GetComponent<Player>().ONPlayerWin += ONPlayerWin;
         playerOriginalPosition = player.transform.position;
 
-        _camera = GameObject.FindGameObjectWithTag("MainCamera");
-        cameraOriginalPosition = _camera.transform.position;
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
+        cameraOriginalPosition = cam.transform.position;
 
         numberFailAttempts.text = totalAttempts.ToString();
     }
@@ -49,7 +49,7 @@ public class GameControl : MonoBehaviour
     {
         player.SetActive(true);
         player.transform.position = playerOriginalPosition;
-        _camera.transform.position = cameraOriginalPosition;
+        cam.transform.position = cameraOriginalPosition;
         status.text = "";
         Time.timeScale = 1;
     }

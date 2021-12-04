@@ -15,13 +15,7 @@ public class Player : MonoBehaviour
     {
         var obj = other.gameObject;
         var playerPosition = gameObject.transform.position;
-        if (obj.TryGetComponent(out SquareSpike square) && obj.transform.position.y < playerPosition.y)
-        {
-            Debug.Log("safe side of spike");
-            return;
-        }
-
-        Debug.Log("not safe side");
+        if (obj.TryGetComponent(out SquareSpike square) && obj.transform.position.y < playerPosition.y) return;
         ONPlayerDeath?.Invoke(this);
     }
     
@@ -31,13 +25,7 @@ public class Player : MonoBehaviour
         else if (other.CompareTag("Ground")) PlayerIsFalling();
     }
     
-    private void CollideWithGate()
-    {
-        ONPlayerWin?.Invoke(this);
-    }
+    private void CollideWithGate() => ONPlayerWin?.Invoke(this);
 
-    private void PlayerIsFalling()
-    {
-        ONPlayerDeath?.Invoke(this);
-    }
+    private void PlayerIsFalling() => ONPlayerDeath?.Invoke(this);
 }
