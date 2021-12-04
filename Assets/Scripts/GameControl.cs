@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
-    private int _totalAttempts = 0;
-    private GameObject _player;
+    private int totalAttempts = 0;
+    private GameObject player;
     private GameObject _camera;
-    private Vector2 _playerOriginalPosition;
-    private Vector2 _cameraOriginalPosition;
-    private string _deathMsg = "YOU DIED :'( RESTART IN 3 seconds...";
-    private string _winMsg = "YOU WIN :D";
+    private Vector2 playerOriginalPosition;
+    private Vector2 cameraOriginalPosition;
+    private readonly string deathMsg = "YOU DIED :'( RESTART IN 3 seconds...";
+    private readonly string winMsg = "YOU WIN :D";
     
     public Text numberFailAttempts;
     public Text status;
@@ -17,39 +17,39 @@ public class GameControl : MonoBehaviour
     public AudioSource throughTheGate;
     private void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
-        _player.GetComponent<Player>().ONPlayerDeath += ONPlayerDeath;
-        _player.GetComponent<Player>().ONPlayerWin += ONPlayerWin;
-        _playerOriginalPosition = _player.transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Player>().ONPlayerDeath += ONPlayerDeath;
+        player.GetComponent<Player>().ONPlayerWin += ONPlayerWin;
+        playerOriginalPosition = player.transform.position;
 
         _camera = GameObject.FindGameObjectWithTag("MainCamera");
-        _cameraOriginalPosition = _camera.transform.position;
+        cameraOriginalPosition = _camera.transform.position;
 
-        numberFailAttempts.text = _totalAttempts.ToString();
+        numberFailAttempts.text = totalAttempts.ToString();
     }
 
     private void ONPlayerDeath(Player obj)
     {
         death.Play();
-        _player.SetActive(false);
-        status.text = _deathMsg;
-        _totalAttempts += 1;
-        numberFailAttempts.text = _totalAttempts.ToString();
+        player.SetActive(false);
+        status.text = deathMsg;
+        totalAttempts += 1;
+        numberFailAttempts.text = totalAttempts.ToString();
         Invoke(nameof(ResetGame), 3f);
     }
 
     private void ONPlayerWin(Player obj)
     {
         throughTheGate.Play();
-        _player.SetActive(false);
-        status.text = _winMsg;
+        player.SetActive(false);
+        status.text = winMsg;
     }
 
     private void ResetGame()
     {
-        _player.SetActive(true);
-        _player.transform.position = _playerOriginalPosition;
-        _camera.transform.position = _cameraOriginalPosition;
+        player.SetActive(true);
+        player.transform.position = playerOriginalPosition;
+        _camera.transform.position = cameraOriginalPosition;
         status.text = "";
         Time.timeScale = 1;
     }

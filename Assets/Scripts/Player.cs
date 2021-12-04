@@ -11,15 +11,17 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy")) CollideWithEnemy(other);
     }
 
-    private void CollideWithEnemy(Collision2D enemy)
+    private void CollideWithEnemy(Collision2D other)
     {
-        var enemyObj = enemy.gameObject;
+        var obj = other.gameObject;
         var playerPosition = gameObject.transform.position;
-        if (enemyObj.name.Contains("SquareSpike") && enemyObj.transform.position.y < playerPosition.y)
+        if (obj.TryGetComponent(out SquareSpike square) && obj.transform.position.y < playerPosition.y)
         {
-            Debug.Log("HIT SAFE SIDE ON SPIKE");
+            Debug.Log("safe side of spike");
             return;
         }
+
+        Debug.Log("not safe side");
         ONPlayerDeath?.Invoke(this);
     }
     
