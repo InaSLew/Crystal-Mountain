@@ -3,14 +3,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
-    // private float _jumpVelocity = 10f;
-    private Rigidbody2D _rb;
+    [SerializeField] private float jumpVelocity;
+    [SerializeField] private AudioSource jumpSound;
+    private Rigidbody2D rb;
     // private bool _isGround = true;
-    // public AudioSource jump;
 
-    private void Start()
+    private void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
     private void FixedUpdate()
     {
@@ -19,20 +19,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Space) && _isGround) Jump();
+        if (Input.GetKeyDown(KeyCode.Space)) Jump();
     }
 
     private void MoveRight()
     {
-        _rb.velocity = Vector2.right * speed * Time.deltaTime;
+        rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
     }
 
-    // private void Jump()
-    // {
-    //     _rb.AddForce(Vector2.up * _jumpVelocity, ForceMode2D.Impulse);
-    //     jump.Play();
-    //     _isGround = false;
-    // }
+    private void Jump()
+    {
+        rb.AddForce(transform.up * jumpVelocity, ForceMode2D.Impulse);
+        jumpSound.Play();
+        // _isGround = false;
+    }
     //
     // private void OnCollisionEnter2D(Collision2D other)
     // {
