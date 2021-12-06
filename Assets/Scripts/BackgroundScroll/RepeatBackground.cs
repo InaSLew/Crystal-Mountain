@@ -5,7 +5,7 @@ public class RepeatBackground : MonoBehaviour
     [SerializeField] private float proportionToReposition;
     private BoxCollider2D boxCollider;
     private float horizontalBorder;
-    private readonly Vector2 offset = Vector2.right * 5f;
+    private readonly Vector2 offset = Vector2.right * 2f;
 
     private void Awake()
     {
@@ -15,7 +15,7 @@ public class RepeatBackground : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.x < -(horizontalBorder * proportionToReposition)) Reposition();
+        if (transform.position.x < -horizontalBorder) Reposition();
     }
 
     private void Reposition()

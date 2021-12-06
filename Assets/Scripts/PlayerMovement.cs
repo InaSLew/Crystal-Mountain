@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     // {
     //     MoveRight();
     // }
-    
+    //
     // private void MoveRight()
     // {
     //     rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);

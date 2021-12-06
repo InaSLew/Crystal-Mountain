@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec7c165947f8a54b89f9309aff71cd6, type: 3}
   m_Name: ScrollSpeed
   m_EditorClassIdentifier: 
-  floatValue: 0.8
+  floatValue: 0.5
