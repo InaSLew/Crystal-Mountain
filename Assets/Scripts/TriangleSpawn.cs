@@ -28,9 +28,11 @@ public class TriangleSpawn : MonoBehaviour
 
     IEnumerator LaunchSpike()
     {
-        var hasSpike = spikeQueue.TryDequeue(out var spike);
-        spike.SetActive(true);
-        if (hasSpike) yield return new WaitForSeconds(spawnInterval);
-        // else StopCoroutine(LaunchSpike());
+        for (var i = 0; i < numberOfTriangle.Int; i++)
+        {
+            var spike = spikeQueue.Dequeue();
+            spike.SetActive(true);
+            yield return new WaitForSeconds(spawnInterval);
+        }
     }
 }
