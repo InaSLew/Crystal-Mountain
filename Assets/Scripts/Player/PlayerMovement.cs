@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        distanceTravelled.Float = 0;
     }
     
     private void FixedUpdate()
