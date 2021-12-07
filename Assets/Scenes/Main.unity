@@ -489,7 +489,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fd35365693f8e458ef9d53ccfec64a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfCrystal: {fileID: 11400000, guid: 5312e0a3661c4234f94858a71115f779, type: 2}
+  crystalPrefab: {fileID: 424875582900816103, guid: 7b608131eb87c45439ebcb6e49cd89f5, type: 3}
+  numberOfGroundCrystal: {fileID: 11400000, guid: 5312e0a3661c4234f94858a71115f779, type: 2}
+  numberOfVerticalCrystal: {fileID: 11400000, guid: 1a62694a59b2c6c4cbf3f51628d473e5, type: 2}
 --- !u!1 &655826331
 GameObject:
   m_ObjectHideFlags: 0

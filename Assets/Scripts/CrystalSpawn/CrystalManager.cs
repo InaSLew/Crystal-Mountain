@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ public class CrystalManager : MonoBehaviour
     [SerializeField] private IntValue numberOfCrystal;
     [SerializeField] private FloatValue playerDistanceTravelled;
     [SerializeField] private float recycleOffset;
-    private Queue<GameObject> crystalQueue;
+    public Queue<GameObject> crystalQueue;
     private Vector3 nextPosition;
 
     void Awake()
@@ -25,14 +24,14 @@ public class CrystalManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (crystalQueue.Peek().transform.localPosition.x + recycleOffset < playerDistanceTravelled.Float)
-        {
-            var crystal = crystalQueue.Dequeue();
-            crystal.transform.localPosition = nextPosition;
-            nextPosition.x += crystal.transform.localScale.x;
-            crystalQueue.Enqueue(crystal);
-        }
-    }
+    // private void Update()
+    // {
+    //     if (crystalQueue.Peek().transform.localPosition.x + recycleOffset < playerDistanceTravelled.Float)
+    //     {
+    //         var crystal = crystalQueue.Dequeue();
+    //         crystal.transform.localPosition = nextPosition;
+    //         nextPosition.x += crystal.transform.localScale.x;
+    //         crystalQueue.Enqueue(crystal);
+    //     }
+    // }
 }
