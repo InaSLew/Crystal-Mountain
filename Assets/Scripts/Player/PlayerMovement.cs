@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private BooleanValue isOnGround;
+    [SerializeField] private FloatValue distanceTravelled;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -25,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.Space) || !isOnGround.BoolValue) return;
-        Jump();
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround.BoolValue) Jump();
+        distanceTravelled.Float = transform.localPosition.x;
     }
 
     private void Jump()

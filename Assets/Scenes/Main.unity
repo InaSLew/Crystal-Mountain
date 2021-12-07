@@ -457,7 +457,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crystalPrefab: {fileID: 424875582900816103, guid: 7b608131eb87c45439ebcb6e49cd89f5, type: 3}
   startPosition: {x: -9.6, y: -4.3, z: 0}
-  numberOfCrystal: 12
+  numberOfCrystal: 15
+  playerDistanceTravelled: {fileID: 11400000, guid: 85643cb1ff2a4494499c87984a1e9bc3, type: 2}
+  recycleOffset: 5
 --- !u!4 &613354461
 Transform:
   m_ObjectHideFlags: 0
@@ -512,6 +514,7 @@ MonoBehaviour:
   jumpForce: 6
   jumpSound: {fileID: 655826342}
   isOnGround: {fileID: 11400000, guid: f9e5662ab8c8e7a4389c80d613be22fa, type: 2}
+  distanceTravelled: {fileID: 11400000, guid: 85643cb1ff2a4494499c87984a1e9bc3, type: 2}
 --- !u!114 &655826334
 MonoBehaviour:
   m_ObjectHideFlags: 0

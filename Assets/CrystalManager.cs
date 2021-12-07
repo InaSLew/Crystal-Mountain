@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CrystalManager : MonoBehaviour
@@ -5,19 +7,32 @@ public class CrystalManager : MonoBehaviour
     [SerializeField] private GameObject crystalPrefab;
     [SerializeField] private Vector3 startPosition;
     [SerializeField] private int numberOfCrystal;
-    private float xOffset;
-    private SpriteRenderer  _renderer;
-    
+    [SerializeField] private FloatValue playerDistanceTravelled;
+    [SerializeField] private float recycleOffset;
+    private Queue<GameObject> crystalQueue;
+    private Vector3 nextPosition;
+
     void Awake()
     {
+        crystalQueue = new Queue<GameObject>(numberOfCrystal);
+        nextPosition = startPosition;
         for (var i = 0; i < numberOfCrystal; i++)
         {
-            var crystal = Instantiate(crystalPrefab, startPosition + new Vector3(xOffset * i, 0, 0), Quaternion.identity);
-            if (i != 0) continue;
-            _renderer = crystal.GetComponent<SpriteRenderer>();
-            xOffset = _renderer.size.x;
+            var crystal = Instantiate(crystalPrefab);
+            crystal.transform.localPosition = nextPosition;
+            nextPosition.x += crystal.transform.localScale.x;
+            crystalQueue.Enqueue(crystal);
         }
     }
 
-    
+    private void Update()
+    {
+        if (crystalQueue.Peek().transform.localPosition.x + recycleOffset < playerDistanceTravelled.Float)
+        {
+            var crystal = crystalQueue.Dequeue();
+            crystal.transform.localPosition = nextPosition;
+            nextPosition.x += crystal.transform.localPosition.x;
+            crystalQueue.Enqueue(crystal);
+        }
+    }
 }
