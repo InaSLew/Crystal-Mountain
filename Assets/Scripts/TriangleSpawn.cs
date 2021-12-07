@@ -13,7 +13,8 @@ public class TriangleSpawn : MonoBehaviour
     private void Awake()
     {
         spikeQueue = new Queue<GameObject>(numberOfTriangle.Int);
-        spawnPosition = Camera.main.ViewportToWorldPoint(new Vector3(2f, .24f, 0));
+        spawnPosition = Camera.main.ViewportToWorldPoint(new Vector3(2f, .32f, 0));
+        spawnPosition.z = 0;
         for (var i = 0; i < numberOfTriangle.Int; i++)
         {
             var spike = Instantiate(spikePrefab);
@@ -27,10 +28,9 @@ public class TriangleSpawn : MonoBehaviour
 
     IEnumerator LaunchSpike()
     {
-        GameObject spike;
-        var hasSpike = spikeQueue.TryDequeue(out spike);
+        var hasSpike = spikeQueue.TryDequeue(out var spike);
         spike.SetActive(true);
         if (hasSpike) yield return new WaitForSeconds(spawnInterval);
-        else StopCoroutine(LaunchSpike());
+        // else StopCoroutine(LaunchSpike());
     }
 }
