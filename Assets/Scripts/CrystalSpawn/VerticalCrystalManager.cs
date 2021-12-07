@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VerticalCrytalManager : MonoBehaviour
+public class VerticalCrystalManager : MonoBehaviour
 {
     [SerializeField] private IntValue numberOfCrystal;
 }
