@@ -1,6 +1,6 @@
-# The Impossible Game - Crystal Mountain
+# Crystal Mountain
 
-✏ This game was made between 13 - 17/09/2021 as a school project
+✏ This game was originally made between 13 - 17/09/2021 as a school project; later to be expanded into an endless runner.
 
 ✏ All the pixel art sprites and background image are made by me.
 
