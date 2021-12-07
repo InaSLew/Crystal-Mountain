@@ -24,14 +24,14 @@ public class CrystalManager : MonoBehaviour
         }
     }
 
-    // private void Update()
-    // {
-    //     if (crystalQueue.Peek().transform.localPosition.x + recycleOffset < playerDistanceTravelled.Float)
-    //     {
-    //         var crystal = crystalQueue.Dequeue();
-    //         crystal.transform.localPosition = nextPosition;
-    //         nextPosition.x += crystal.transform.localScale.x;
-    //         crystalQueue.Enqueue(crystal);
-    //     }
-    // }
+    private void Update()
+    {
+        if (crystalQueue.Peek().transform.localPosition.x + recycleOffset < playerDistanceTravelled.Float)
+        {
+            var crystal = crystalQueue.Dequeue();
+            crystal.transform.localPosition = nextPosition;
+            nextPosition.x += crystal.transform.localScale.x;
+            crystalQueue.Enqueue(crystal);
+        }
+    }
 }
