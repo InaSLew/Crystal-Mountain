@@ -5,13 +5,13 @@ public class FollowPlayer : MonoBehaviour
     public GameObject player;
     private Vector3 offset;
 
-    private void Start()
+    private void Awake()
     {
-        offset = transform.position;
+        offset = transform.position - player.transform.position;
     }
 
     private void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
+        transform.position = Vector3.Lerp(transform.position, player.transform.position + offset, .1f);
     }
 }

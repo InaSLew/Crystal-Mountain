@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TriangleSpawn : MonoBehaviour
+{
+    [SerializeField] private GameObject spikePrefab;
+    [SerializeField] private IntValue numberOfTriangle;
+    [SerializeField] private float spawnInterval;
+    private Vector3 spawnPosition;
+    private Queue<GameObject> spikeQueue;
+
+    private void Awake()
+    {
+        spikeQueue = new Queue<GameObject>(numberOfTriangle.Int);
+        spawnPosition = Camera.main.ViewportToWorldPoint(new Vector3(2f, .24f, 0));
+        for (var i = 0; i < numberOfTriangle.Int; i++)
+        {
+            var spike = Instantiate(spikePrefab);
+            spike.transform.localPosition = spawnPosition;
+            spike.SetActive(false);
+            spikeQueue.Enqueue(spike);
+        }
+
+        StartCoroutine(LaunchSpike());
+    }
+
+    IEnumerator LaunchSpike()
+    {
+        GameObject spike;
+        var hasSpike = spikeQueue.TryDequeue(out spike);
+        spike.SetActive(true);
+        if (hasSpike) yield return new WaitForSeconds(spawnInterval);
+        else StopCoroutine(LaunchSpike());
+    }
+}
