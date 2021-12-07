@@ -6,7 +6,7 @@ public class CrystalManager : MonoBehaviour
 {
     [SerializeField] private GameObject crystalPrefab;
     [SerializeField] private Vector3 startPosition;
-    [SerializeField] private int numberOfCrystal;
+    [SerializeField] private IntValue numberOfCrystal;
     [SerializeField] private FloatValue playerDistanceTravelled;
     [SerializeField] private float recycleOffset;
     private Queue<GameObject> crystalQueue;
@@ -14,9 +14,9 @@ public class CrystalManager : MonoBehaviour
 
     void Awake()
     {
-        crystalQueue = new Queue<GameObject>(numberOfCrystal);
+        crystalQueue = new Queue<GameObject>(numberOfCrystal.Int);
         nextPosition = startPosition;
-        for (var i = 0; i < numberOfCrystal; i++)
+        for (var i = 0; i < numberOfCrystal.Int; i++)
         {
             var crystal = Instantiate(crystalPrefab);
             crystal.transform.localPosition = nextPosition;
