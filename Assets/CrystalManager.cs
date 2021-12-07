@@ -31,7 +31,7 @@ public class CrystalManager : MonoBehaviour
         {
             var crystal = crystalQueue.Dequeue();
             crystal.transform.localPosition = nextPosition;
-            nextPosition.x += crystal.transform.localPosition.x;
+            nextPosition.x += crystal.transform.localScale.x;
             crystalQueue.Enqueue(crystal);
         }
     }

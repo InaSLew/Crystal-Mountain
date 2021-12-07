@@ -459,7 +459,7 @@ MonoBehaviour:
   startPosition: {x: -9.6, y: -4.3, z: 0}
   numberOfCrystal: 15
   playerDistanceTravelled: {fileID: 11400000, guid: 85643cb1ff2a4494499c87984a1e9bc3, type: 2}
-  recycleOffset: 5
+  recycleOffset: 3
 --- !u!4 &613354461
 Transform:
   m_ObjectHideFlags: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73da22cae6528b4aa6924f342eae9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 50
   jumpForce: 6
   jumpSound: {fileID: 655826342}
   isOnGround: {fileID: 11400000, guid: f9e5662ab8c8e7a4389c80d613be22fa, type: 2}
