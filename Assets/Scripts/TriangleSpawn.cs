@@ -8,6 +8,7 @@ public class TriangleSpawn : MonoBehaviour
     [SerializeField] private IntValue numberOfTriangle;
     [SerializeField] private float spawnInterval;
     [SerializeField] private Vector3Value spawnPosition;
+    [SerializeField] private BooleanValue isGameOver;
     private Queue<GameObject> spikeQueue;
 
     private void Awake()
@@ -29,10 +30,11 @@ public class TriangleSpawn : MonoBehaviour
 
     IEnumerator LaunchSpike()
     {
-        for (var i = 0; i < numberOfTriangle.Int; i++)
+        while (!isGameOver.BoolValue)
         {
             var spike = spikeQueue.Dequeue();
             spike.SetActive(true);
+            spikeQueue.Enqueue(spike);
             yield return new WaitForSeconds(spawnInterval);
         }
     }
