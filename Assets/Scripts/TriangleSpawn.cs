@@ -7,18 +7,19 @@ public class TriangleSpawn : MonoBehaviour
     [SerializeField] private GameObject spikePrefab;
     [SerializeField] private IntValue numberOfTriangle;
     [SerializeField] private float spawnInterval;
-    private Vector3 spawnPosition;
+    [SerializeField] private Vector3Value spawnPosition;
     private Queue<GameObject> spikeQueue;
 
     private void Awake()
     {
         spikeQueue = new Queue<GameObject>(numberOfTriangle.Int);
-        spawnPosition = Camera.main.ViewportToWorldPoint(new Vector3(2f, .32f, 0));
-        spawnPosition.z = 0;
+        var temp = Camera.main.ViewportToWorldPoint(new Vector3(2f, .32f, 0));
+        temp.z = 0;
+        spawnPosition.Vector3 = temp;
         for (var i = 0; i < numberOfTriangle.Int; i++)
         {
             var spike = Instantiate(spikePrefab);
-            spike.transform.localPosition = spawnPosition;
+            spike.transform.localPosition = spawnPosition.Vector3;
             spike.SetActive(false);
             spikeQueue.Enqueue(spike);
         }

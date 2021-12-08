@@ -492,6 +492,7 @@ MonoBehaviour:
   spikePrefab: {fileID: 3793702713432245920, guid: 814339aaf7a0f13439cc3aba1be8c341, type: 3}
   numberOfTriangle: {fileID: 11400000, guid: d75520e0788e6154ca1fe60384a63b6f, type: 2}
   spawnInterval: 2.5
+  spawnPosition: {fileID: 11400000, guid: ab76a1fab41f47f40a3d04b5f0d6647c, type: 2}
 --- !u!1 &655826331
 GameObject:
   m_ObjectHideFlags: 0

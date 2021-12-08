@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class TriangleSpike : MonoBehaviour
 {
-
+    [SerializeField] private Vector3Value spawnPosition;
     private void OnBecameInvisible()
     {
         gameObject.SetActive(false);
-        // probably reset position back to spawn as well
+        transform.localPosition = spawnPosition.Vector3;
     }
 }
