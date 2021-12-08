@@ -8,6 +8,7 @@ public class TerrainSpawnManager : MonoBehaviour
     [SerializeField] private IntValue numberOfCrystal;
     [SerializeField] private FloatValue playerDistanceTravelled;
     [SerializeField] private float recycleOffset;
+    [SerializeField] private Vector3Value worldSpawnPosition;
     private Queue<GameObject> crystalQueue;
     private Vector3 nextPosition;
 
@@ -24,14 +25,15 @@ public class TerrainSpawnManager : MonoBehaviour
         }
     }
 
-    // private void Update()
-    // {
-    //     if (crystalQueue.Peek().transform.localPosition.x + recycleOffset < playerDistanceTravelled.Float)
-    //     {
-    //         var crystal = crystalQueue.Dequeue();
-    //         crystal.transform.localPosition = nextPosition;
-    //         nextPosition.x += crystal.transform.localScale.x;
-    //         crystalQueue.Enqueue(crystal);
-    //     }
-    // }
+    private void Update()
+    {
+        if (crystalQueue.Peek().transform.localPosition.x + recycleOffset < playerDistanceTravelled.Float)
+        {
+            var crystal = crystalQueue.Dequeue();
+            crystal.transform.localPosition = nextPosition;
+            nextPosition.x += crystal.transform.localScale.x;
+            worldSpawnPosition.Vector3 += new Vector3(crystal.transform.localScale.x, 0, 0);
+            crystalQueue.Enqueue(crystal);
+        }
+    }
 }

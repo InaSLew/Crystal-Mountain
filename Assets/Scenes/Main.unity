@@ -462,6 +462,7 @@ MonoBehaviour:
   numberOfCrystal: {fileID: 11400000, guid: 5312e0a3661c4234f94858a71115f779, type: 2}
   playerDistanceTravelled: {fileID: 11400000, guid: 85643cb1ff2a4494499c87984a1e9bc3, type: 2}
   recycleOffset: 8
+  worldSpawnPosition: {fileID: 11400000, guid: ab76a1fab41f47f40a3d04b5f0d6647c, type: 2}
 --- !u!4 &613354461
 Transform:
   m_ObjectHideFlags: 0
@@ -492,8 +493,10 @@ MonoBehaviour:
   spikePrefab: {fileID: 3793702713432245920, guid: 814339aaf7a0f13439cc3aba1be8c341, type: 3}
   numberOfTriangle: {fileID: 11400000, guid: d75520e0788e6154ca1fe60384a63b6f, type: 2}
   spawnInterval: 2.5
-  spawnPosition: {fileID: 11400000, guid: ab76a1fab41f47f40a3d04b5f0d6647c, type: 2}
+  worldSpawnPosition: {fileID: 11400000, guid: ab76a1fab41f47f40a3d04b5f0d6647c, type: 2}
+  viewPortPosition: {fileID: 11400000, guid: 539f056236e4906409d20b221886a05b, type: 2}
   isGameOver: {fileID: 11400000, guid: ae4b540b9ef675e4eb91d9d5e8d8375c, type: 2}
+  speed: 0
 --- !u!1 &655826331
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73da22cae6528b4aa6924f342eae9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 75
   jumpForce: 6
   jumpSound: {fileID: 655826342}
   isOnGround: {fileID: 11400000, guid: f9e5662ab8c8e7a4389c80d613be22fa, type: 2}
