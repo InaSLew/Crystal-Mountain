@@ -13,5 +13,7 @@ public class FollowPlayer : MonoBehaviour
     private void LateUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, player.transform.position + offset, .1f);
+        
+        // might be an overkill but consider Vector3.SmoothDamp
     }
 }
