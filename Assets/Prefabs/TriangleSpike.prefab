@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 84547505129446984}
   - component: {fileID: -7410845275810687155}
   - component: {fileID: -7363185602307817820}
+  - component: {fileID: 169805537913406441}
   m_Layer: 0
   m_Name: TriangleSpike
   m_TagString: Enemy
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 11400000, guid: ab76a1fab41f47f40a3d04b5f0d6647c, type: 2}
+  IsSpikeOvercome: {fileID: 11400000, guid: a94dc9d049b3a5147ba9adbb5e4cf230, type: 2}
 --- !u!60 &84547505129446984
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -128,8 +130,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.103532106, y: 0.13400915}
       - {x: 0.05411813, y: 0.044263035}
-      - {x: -0.04, y: 0.25}
-      - {x: -0.06, y: 0.25}
+      - {x: -0.029875005, y: 0.21456274}
+      - {x: -0.052406278, y: 0.22975}
       - {x: -0.15610999, y: -0.1195963}
       - {x: -0.14433768, y: 0.076196894}
       - {x: -0.21059634, y: -0.0498807}
@@ -176,3 +178,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &169805537913406441
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3793702713432245920}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01, y: 0.66802925}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.012816191, y: 0.92296374}
+  m_EdgeRadius: 0
