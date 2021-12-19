@@ -8,7 +8,6 @@ public class TriangleSpike : MonoBehaviour
     private void OnBecameInvisible()
     {
         gameObject.SetActive(false);
-        transform.localPosition = spawnPosition.Vector3;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
