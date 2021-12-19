@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class TriangleSpike : MonoBehaviour
 {
-    [SerializeField] private Vector3Value spawnPosition;
     [SerializeField] private GameEvent IsSpikeOvercome;
     
     private void OnBecameInvisible()
