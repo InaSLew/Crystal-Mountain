@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2ea25212c5f5d489e29f8cfc5636d2, type: 3}
   m_Name: PlayerIsOnGround
   m_EditorClassIdentifier: 
-  boolValue: 1
+  boolValue: 0

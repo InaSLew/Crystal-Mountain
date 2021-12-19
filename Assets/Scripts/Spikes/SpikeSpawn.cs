@@ -7,31 +7,20 @@ public class SpikeSpawn : MonoBehaviour
     [SerializeField] private GameObject spikePrefab;
     [SerializeField] private IntValue numberOfTriangle;
     [SerializeField] private float spawnInterval;
-    [SerializeField] private Vector3Value worldSpawnPosition;
-    [SerializeField] private Vector3Value viewPortPosition;
     [SerializeField] private BooleanValue isGameOver;
-    [SerializeField] private float speed;
     private Queue<GameObject> spikeQueue;
 
-    private void Awake()
+    private void OnEnable()
     {
         spikeQueue = new Queue<GameObject>(numberOfTriangle.Int);
-        SetWorldSpawnPosition();
         for (var i = 0; i < numberOfTriangle.Int; i++)
         {
             var spike = Instantiate(spikePrefab);
-            spike.transform.localPosition = worldSpawnPosition.Vector3;
+            spike.transform.position = (Vector2)transform.position;
             spike.SetActive(false);
             spikeQueue.Enqueue(spike);
         }
         StartCoroutine(LaunchSpike());
-    }
-
-    private void SetWorldSpawnPosition()
-    {
-        var temp = Camera.main.ViewportToWorldPoint(viewPortPosition.Vector3);
-        temp.z = 0;
-        worldSpawnPosition.Vector3 = temp;
     }
 
     IEnumerator LaunchSpike()
