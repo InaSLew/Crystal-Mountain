@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TriangleSpike : MonoBehaviour
+public class Spike : MonoBehaviour
 {
     [SerializeField] private GameEvent IsSpikeOvercome;
     

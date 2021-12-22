@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2725198598a330b429a99ba6556ad085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 11400000, guid: ab76a1fab41f47f40a3d04b5f0d6647c, type: 2}
   IsSpikeOvercome: {fileID: 11400000, guid: a94dc9d049b3a5147ba9adbb5e4cf230, type: 2}
 --- !u!60 &84547505129446984
 PolygonCollider2D:
@@ -169,7 +168,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 450
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -177,7 +176,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!61 &169805537913406441
 BoxCollider2D:
   m_ObjectHideFlags: 0

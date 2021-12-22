@@ -1,17 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Random;
 
 [CreateAssetMenu(fileName = "SpikeSpawn", menuName = "Game/SpikeSpawn")]
 public class SpikeSpawn : ScriptableObject
 {
+    [Header("Spike to spawn")]
     [SerializeField] private GameObject spikePrefab;
-    [SerializeField] private int spikeNumber;
+    
+    [Header("Number and speed of spawning")]
+    [SerializeField] private int minSpikeNumber;
+    [SerializeField] private int maxSpikeNumber;
     [SerializeField] private float spawnInterval;
+
+    private int spikeNumber;
     private Queue<GameObject> queue;
     public float SpawnInterval => spawnInterval;
 
     public void InitQueue()
     {
+        spikeNumber = Range(minSpikeNumber, maxSpikeNumber);
         queue = new Queue<GameObject>(spikeNumber);
         for (var i = 0; i < spikeNumber; i++)
         {

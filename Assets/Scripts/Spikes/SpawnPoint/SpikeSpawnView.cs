@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class TriangleSpikeSpawn : MonoBehaviour
+public class SpikeSpawnView : MonoBehaviour
 {
     [SerializeField] private SpikeSpawn spikeSpawn;
     [SerializeField] private BooleanValue isGameOver;

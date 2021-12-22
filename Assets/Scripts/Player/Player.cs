@@ -14,13 +14,13 @@ public class Player : MonoBehaviour
 
     private void CollideWithEnemy(Collision2D other)
     {
-        var obj = other.gameObject;
-        var playerPosition = gameObject.transform.position;
-        if (obj.TryGetComponent(out SquareSpike square) && obj.transform.position.y < playerPosition.y)
-        {
-            isOnGround.BoolValue = true;
-            return;
-        }
+        // var obj = other.gameObject;
+        // var playerPosition = gameObject.transform.position;
+        // if (obj.TryGetComponent(out Spike square) && obj.transform.position.y < playerPosition.y)
+        // {
+        //     isOnGround.BoolValue = true;
+        //     return;
+        // }
         ONPlayerDeath?.Invoke(this);
     }
     
