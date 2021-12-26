@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ae727d83cd8c0458dec77b131628db, type: 3}
   m_Name: SquareSpawn
   m_EditorClassIdentifier: 
-  spikePrefab: {fileID: 1833864218890380448, guid: ea5ca636619c3b544876eb7b4e1a07b4, type: 3}
-  minSpikeNumber: 1
-  maxSpikeNumber: 3
-  spawnInterval: 5
+  spikePrefab: {fileID: 3793702713432245920, guid: ec463f9ca21a6924592c385a54fab65c, type: 3}
+  minSpikeNumber: 2
+  maxSpikeNumber: 5
+  spawnInterval: 7.5
