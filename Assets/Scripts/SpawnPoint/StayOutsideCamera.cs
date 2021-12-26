@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class StayOutsideCamera : MonoBehaviour
 {
-    private Vector3 offset;
+    private Vector3 offsetOnX;
+    private float defaultValueOnY;
     private void Awake()
     {
         var mainCam = Camera.main;
-        offset = transform.position - mainCam.transform.position;
+        var camToSpawn = transform.position - mainCam.transform.position;
+        offsetOnX = new Vector3(camToSpawn.x, 0 , camToSpawn.z);
+        defaultValueOnY = transform.position.y;
     }
 
     private void LateUpdate()
     {
-        transform.position = Camera.main.transform.position + offset;
+        var mainCamPosition = Camera.main.transform.position;
+        transform.position = new Vector3(mainCamPosition.x, defaultValueOnY, mainCamPosition.z) + offsetOnX;
     }
 }

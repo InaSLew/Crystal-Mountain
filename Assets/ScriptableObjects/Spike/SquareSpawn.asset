@@ -15,4 +15,4 @@ MonoBehaviour:
   spikePrefab: {fileID: 1833864218890380448, guid: ea5ca636619c3b544876eb7b4e1a07b4, type: 3}
   minSpikeNumber: 1
   maxSpikeNumber: 3
-  spawnInterval: 3
+  spawnInterval: 5
