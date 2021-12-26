@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class SpikeSpawnView : MonoBehaviour
 {
+    [Header("Scriptable objects")]
     [SerializeField] private SpikeSpawn spikeSpawn;
     [SerializeField] private BooleanValue isGameOver;
 

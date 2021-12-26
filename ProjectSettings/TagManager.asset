@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Gate
   - Ground
-  - SpikeSpawn
+  - TriangleSpike
+  - SquareSpike
   layers:
   - Default
   - TransparentFX

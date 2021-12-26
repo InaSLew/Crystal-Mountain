@@ -30,6 +30,8 @@ public class GameControl : MonoBehaviour
 
     private void ONPlayerDeath(Player obj)
     {
+        Debug.Log("player death from GameControl");
+        
         death.Play();
         player.SetActive(false);
         status.text = deathMsg;

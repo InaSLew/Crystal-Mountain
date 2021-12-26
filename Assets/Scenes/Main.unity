@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: spikeSpawn
       value: 
       objectReference: {fileID: 11400000, guid: bd785058cfc0d51418d746127ae80f42, type: 2}
+    - target: {fileID: 1563502123701544312, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
+      propertyPath: launchDelayInSeconds
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544317, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_Name
       value: SpikeSpawnPoint (1)
@@ -152,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544318, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544318, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -261,12 +265,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47081754}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: a94dc9d049b3a5147ba9adbb5e4cf230, type: 2}
+  voidEvent: {fileID: 11400000, guid: a94dc9d049b3a5147ba9adbb5e4cf230, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -2023,6 +2027,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1563502123701544312, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
+      propertyPath: launchDelayInSeconds
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544317, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_Name
       value: SpikeSpawnPoint
@@ -2204,10 +2212,6 @@ PrefabInstance:
     - target: {fileID: 6745434395951730288, guid: 4e841d4755b173541bbf7c7423919bf2, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6745434395951730288, guid: 4e841d4755b173541bbf7c7423919bf2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e841d4755b173541bbf7c7423919bf2, type: 3}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1563502123701544313}
   m_Layer: 0
   m_Name: SpikeSpawnPoint
-  m_TagString: SpikeSpawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

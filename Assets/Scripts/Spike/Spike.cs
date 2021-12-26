@@ -2,15 +2,32 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    [SerializeField] private GameEventVoid IsSpikeOvercome;
-    
-    private void OnBecameInvisible()
+    [SerializeField] private GameEvent IsCollideWithPlayer;
+    [SerializeField] private BooleanValue playerIsOnGround;
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        gameObject.SetActive(false);
+        if (!other.collider.CompareTag("Player")) return;
+        if (gameObject.CompareTag("TriangleSpike"))
+        {
+            Debug.Log("Collide with a triangle spike");
+            IsCollideWithPlayer.Raise();
+        }
+        else if (gameObject.CompareTag("SquareSpike"))
+        {
+            Debug.Log("Collide with a square spike");
+            if (IsPlayerAboveSpike())
+            {
+                Debug.Log("player is above square spike");
+                playerIsOnGround.BoolValue = true;
+            }
+            else IsCollideWithPlayer.Raise();
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private bool IsPlayerAboveSpike()
     {
-        if (other.CompareTag("Player")) IsSpikeOvercome.Raise();
+        var player = GameObject.FindGameObjectWithTag("Player");
+        return player.transform.position.y > transform.position.y;
     }
 }

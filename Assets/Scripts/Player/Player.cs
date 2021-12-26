@@ -7,23 +7,17 @@ public class Player : MonoBehaviour
     public event Action<Player> ONPlayerWin;
     [SerializeField] private BooleanValue isOnGround;
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy")) CollideWithEnemy(other);
-    }
+    // private void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Enemy")) CollideWithEnemy(other);
+    // }
 
-    private void CollideWithEnemy(Collision2D other)
+    public void OnCollideWithEnemy()
     {
-        // var obj = other.gameObject;
-        // var playerPosition = gameObject.transform.position;
-        // if (obj.TryGetComponent(out Spike square) && obj.transform.position.y < playerPosition.y)
-        // {
-        //     isOnGround.BoolValue = true;
-        //     return;
-        // }
+        Debug.Log("OnCollideWithEnemy fired");
         ONPlayerDeath?.Invoke(this);
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Gate")) CollideWithGate();
