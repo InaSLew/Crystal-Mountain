@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// A GameEvent represents any message that we want to send across the system
+/// A void GameEvent for quick, generic event handling
 /// </summary>
-[CreateAssetMenu(fileName = "Event", menuName = "Game/Event")]
-public class GameEvent : ScriptableObject
+[CreateAssetMenu(fileName = "VoidEvent", menuName = "Game/Event/VoidEvent")]
+public class GameEventVoid : ScriptableObject
 {
     private List<GameEventListener> listeners = new List<GameEventListener>();
 

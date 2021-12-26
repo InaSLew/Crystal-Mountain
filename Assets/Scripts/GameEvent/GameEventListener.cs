@@ -3,10 +3,10 @@ using UnityEngine.Events;
 
 public class GameEventListener : MonoBehaviour
 {
-    public GameEvent Event;
+    public GameEventVoid eventVoid;
     public UnityEvent Response;
 
-    private void OnEnable() => Event.RegisterListener(this);
-    private void OnDisable() => Event.UnregisterListener(this);
+    private void OnEnable() => eventVoid.RegisterListener(this);
+    private void OnDisable() => eventVoid.UnregisterListener(this);
     public void OnEventRaised() => Response.Invoke();
 }

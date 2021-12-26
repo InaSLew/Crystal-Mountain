@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    [SerializeField] private GameEvent IsSpikeOvercome;
+    [SerializeField] private GameEventVoid IsSpikeOvercome;
     
     private void OnBecameInvisible()
     {
