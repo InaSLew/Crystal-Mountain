@@ -7,14 +7,8 @@ public class Player : MonoBehaviour
     public event Action<Player> ONPlayerWin;
     [SerializeField] private BooleanValue isOnGround;
 
-    // private void OnCollisionEnter2D(Collision2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Enemy")) CollideWithEnemy(other);
-    // }
-
     public void OnCollideWithEnemy()
     {
-        Debug.Log("OnCollideWithEnemy fired");
         ONPlayerDeath?.Invoke(this);
     }
 

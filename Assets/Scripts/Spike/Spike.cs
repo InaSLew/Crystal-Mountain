@@ -8,19 +8,10 @@ public class Spike : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (!other.collider.CompareTag("Player")) return;
-        if (gameObject.CompareTag("TriangleSpike"))
-        {
-            Debug.Log("Collide with a triangle spike");
-            IsCollideWithPlayer.Raise();
-        }
+        if (gameObject.CompareTag("TriangleSpike")) IsCollideWithPlayer.Raise();
         else if (gameObject.CompareTag("SquareSpike"))
         {
-            Debug.Log("Collide with a square spike");
-            if (IsPlayerAboveSpike())
-            {
-                Debug.Log("player is above square spike");
-                playerIsOnGround.BoolValue = true;
-            }
+            if (IsPlayerAboveSpike()) playerIsOnGround.BoolValue = true;
             else IsCollideWithPlayer.Raise();
         }
     }
