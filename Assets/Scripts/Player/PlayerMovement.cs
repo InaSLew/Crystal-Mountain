@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private BooleanValue isOnGround;
     [SerializeField] private FloatValue distanceTravelled;
+    [SerializeField] private float addOnSpeed;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -41,5 +42,11 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground")) isOnGround.BoolValue = true;
+    }
+
+    public void OnPlayerSpeedUp()
+    {
+        Debug.Log("TIME TO RAMP IT UP");
+        speed += addOnSpeed;
     }
 }

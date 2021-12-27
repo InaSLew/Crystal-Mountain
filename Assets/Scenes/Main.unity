@@ -1836,6 +1836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOvercomeSpikes: {fileID: 11400000, guid: c5f770638a084044096b83fa5e2428ed, type: 2}
+  playerSpeedUp: {fileID: 11400000, guid: 51d933c8880d1bb479daa7551b23c4a6, type: 2}
+  speedUpThreshold: 5
 --- !u!1 &1925555494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,6 +2460,10 @@ PrefabInstance:
     - target: {fileID: 6745434395951730288, guid: 4e841d4755b173541bbf7c7423919bf2, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745434395951730295, guid: 4e841d4755b173541bbf7c7423919bf2, type: 3}
+      propertyPath: addOnSpeed
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e841d4755b173541bbf7c7423919bf2, type: 3}
