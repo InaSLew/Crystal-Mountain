@@ -10,10 +10,8 @@ public class GameControl : MonoBehaviour
     private Vector2 cameraOriginalPosition;
     
     // To-be-refactored zone
-    private int totalAttempts = 0;
     private readonly string deathMsg = "YOU DIED :'( RESTART IN 3 seconds...";
     private readonly string winMsg = "YOU WIN :D";
-    public Text numberFailAttempts;
     public Text status;
     // To-be-refactored zone
     
@@ -27,8 +25,6 @@ public class GameControl : MonoBehaviour
 
         cam = GameObject.FindGameObjectWithTag("MainCamera");
         cameraOriginalPosition = cam.transform.position;
-
-        numberFailAttempts.text = totalAttempts.ToString();
     }
 
     public void OnPlayerIsDead()
@@ -36,8 +32,6 @@ public class GameControl : MonoBehaviour
         isGameOver.BoolValue = true;
         player.SetActive(false);
         status.text = deathMsg;
-        totalAttempts += 1;
-        numberFailAttempts.text = totalAttempts.ToString();
         Invoke(nameof(ResetGame), 3f);
     }
 
