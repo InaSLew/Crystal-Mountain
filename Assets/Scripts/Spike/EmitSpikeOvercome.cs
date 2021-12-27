@@ -6,7 +6,6 @@ public class EmitSpikeOvercome : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("trigger on EmitSpikeOvercome entered");
         if (other.CompareTag("Player")) spikeIsOvercome.Raise();
     }
 }

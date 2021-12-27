@@ -4,20 +4,21 @@ using UnityEngine.UI;
 // TODO: Make this class smaller
 public class GameControl : MonoBehaviour
 {
-    private int totalAttempts = 0;
     private GameObject player;
     private GameObject cam;
     private Vector2 playerOriginalPosition;
     private Vector2 cameraOriginalPosition;
+    
+    // To-be-refactored zone
+    private int totalAttempts = 0;
     private readonly string deathMsg = "YOU DIED :'( RESTART IN 3 seconds...";
     private readonly string winMsg = "YOU WIN :D";
-    
     public Text numberFailAttempts;
     public Text status;
-    public AudioSource death;
-    public AudioSource throughTheGate;
-    [SerializeField] private BooleanValue isGameOver;
+    // To-be-refactored zone
     
+    [SerializeField] private BooleanValue isGameOver;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -33,7 +34,6 @@ public class GameControl : MonoBehaviour
     public void OnPlayerIsDead()
     {
         isGameOver.BoolValue = true;
-        death.Play();
         player.SetActive(false);
         status.text = deathMsg;
         totalAttempts += 1;
@@ -43,7 +43,6 @@ public class GameControl : MonoBehaviour
 
     private void ONPlayerWin(Player obj)
     {
-        throughTheGate.Play();
         player.SetActive(false);
         status.text = winMsg;
     }
