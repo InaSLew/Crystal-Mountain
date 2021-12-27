@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1563502123701544319}
   - component: {fileID: 1563502123701544312}
   - component: {fileID: 1563502123701544313}
+  - component: {fileID: 6012531025995246044}
   m_Layer: 0
   m_Name: SpikeSpawnPoint
   m_TagString: Untagged
@@ -72,3 +73,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4971200cf9b13d24e80dec56307b66a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6012531025995246044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563502123701544317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voidEvent: {fileID: 11400000, guid: fe63946081323b449955be8811cc227c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1563502123701544312}
+        m_TargetAssemblyTypeName: SpikeSpawnView, Assembly-CSharp
+        m_MethodName: OnResetGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -5,12 +5,14 @@ public class UpdateStatus : MonoBehaviour
 {
     private readonly string deathMsg = "YOU DIED :'( RESTART IN 3 seconds...";
     private readonly string winMsg = "YOU WIN :D";
-    private Text statusDisplay;
+    private Text textDisplay;
 
     private void Awake()
     {
-        statusDisplay = GetComponent<Text>();
+        textDisplay = GetComponent<Text>();
     }
 
-    public void OnPlayerDeath() => statusDisplay.text = deathMsg;
+    public void OnPlayerDeath() => UpdateTextDisplay(deathMsg);
+    public void OnResetGame() => UpdateTextDisplay("");
+    private void UpdateTextDisplay(string msg) => textDisplay.text = msg;
 }

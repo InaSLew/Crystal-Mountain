@@ -3,20 +3,14 @@ using UnityEngine;
 public class GameControl : MonoBehaviour
 {
     [SerializeField] private BooleanValue isGameOver;
+    [SerializeField] private GameEvent resetGame;
     
     private GameObject player;
-    private GameObject cam;
-    private Vector2 playerOriginalPosition;
-    private Vector2 cameraOriginalPosition;
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Player>().ONPlayerWin += ONPlayerWin; // <--- Retire target
-        playerOriginalPosition = player.transform.position;
-
-        cam = GameObject.FindGameObjectWithTag("MainCamera");
-        cameraOriginalPosition = cam.transform.position;
     }
 
     public void OnPlayerIsDead()
@@ -36,10 +30,7 @@ public class GameControl : MonoBehaviour
     private void ResetGame()
     {
         isGameOver.BoolValue = false;
+        resetGame.Raise();
         player.SetActive(true);
-        player.transform.position = playerOriginalPosition;
-        cam.transform.position = cameraOriginalPosition;
-        // status.text = "";
-        Time.timeScale = 1;
     }
 }

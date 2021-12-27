@@ -24,4 +24,6 @@ public class SpikeSpawnView : MonoBehaviour
             yield return new WaitForSeconds(spikeSpawn.SpawnInterval);
         }
     }
+
+    public void OnResetGame() => StartCoroutine(LaunchSpike());
 }
