@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CountFailedAttempt : MonoBehaviour
+public class CountFailAttempt : MonoBehaviour
 {
     private int totalAttempts = 0;
     private Text failAttemptDisplay;
