@@ -3,14 +3,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public event Action<Player> ONPlayerDeath;
-    public event Action<Player> ONPlayerWin;
-    [SerializeField] private BooleanValue isOnGround;
+    [SerializeField] private GameEvent playerIsDead;
+    public event Action<Player> ONPlayerWin; // <--- Retire target
 
-    public void OnCollideWithEnemy()
-    {
-        ONPlayerDeath?.Invoke(this);
-    }
+    public void OnCollideWithEnemy() => playerIsDead.Raise();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,5 +16,5 @@ public class Player : MonoBehaviour
     
     private void CollideWithGate() => ONPlayerWin?.Invoke(this);
 
-    private void PlayerIsFalling() => ONPlayerDeath?.Invoke(this);
+    private void PlayerIsFalling() => playerIsDead.Raise();
 }

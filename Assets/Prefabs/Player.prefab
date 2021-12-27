@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e599da01ac115eb489e320dd8324f65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIsDead: {fileID: 11400000, guid: 1dc83aaa7fc2f3f42b602f9fcc5b62ec, type: 2}
   isOnGround: {fileID: 11400000, guid: f9e5662ab8c8e7a4389c80d613be22fa, type: 2}
 --- !u!114 &6745434395951730295
 MonoBehaviour:

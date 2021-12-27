@@ -18,7 +18,6 @@ public class GameControl : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Player>().ONPlayerDeath += ONPlayerDeath;
         player.GetComponent<Player>().ONPlayerWin += ONPlayerWin;
         playerOriginalPosition = player.transform.position;
 
@@ -28,10 +27,8 @@ public class GameControl : MonoBehaviour
         numberFailAttempts.text = totalAttempts.ToString();
     }
 
-    private void ONPlayerDeath(Player obj)
+    public void OnPlayerIsDead()
     {
-        Debug.Log("player death from GameControl");
-        
         death.Play();
         player.SetActive(false);
         status.text = deathMsg;
