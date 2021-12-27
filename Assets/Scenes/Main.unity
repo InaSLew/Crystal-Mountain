@@ -580,8 +580,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 47081755}
-  - component: {fileID: 47081756}
-  - component: {fileID: 47081757}
   m_Layer: 5
   m_Name: OvercomeCounter
   m_TagString: Untagged
@@ -611,48 +609,6 @@ RectTransform:
   m_AnchoredPosition: {x: 642, y: -116}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &47081756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47081754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f12109355ccf594c87ccbb424efcb18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDisplay: {fileID: 1890955978}
-  numberOvercomeSpikes: {fileID: 11400000, guid: c5f770638a084044096b83fa5e2428ed, type: 2}
---- !u!114 &47081757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47081754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voidEvent: {fileID: 11400000, guid: a94dc9d049b3a5147ba9adbb5e4cf230, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 47081756}
-        m_TargetAssemblyTypeName: CountOvercomeSpikes, Assembly-CSharp
-        m_MethodName: OnSpikeOvercome
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &376631641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,8 +1653,10 @@ GameObject:
   - component: {fileID: 1890955977}
   - component: {fileID: 1890955979}
   - component: {fileID: 1890955978}
+  - component: {fileID: 1890955981}
+  - component: {fileID: 1890955980}
   m_Layer: 5
-  m_Name: NumberSpikesOvercome
+  m_Name: CountOvercomeSpikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1766,6 +1724,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890955976}
   m_CullTransparentMesh: 1
+--- !u!114 &1890955980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890955976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voidEvent: {fileID: 11400000, guid: a94dc9d049b3a5147ba9adbb5e4cf230, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1890955981}
+        m_TargetAssemblyTypeName: CountOvercomeSpikes, Assembly-CSharp
+        m_MethodName: OnSpikeOvercome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1890955981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890955976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f12109355ccf594c87ccbb424efcb18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOvercomeSpikes: {fileID: 11400000, guid: c5f770638a084044096b83fa5e2428ed, type: 2}
 --- !u!1 &1925555494
 GameObject:
   m_ObjectHideFlags: 0

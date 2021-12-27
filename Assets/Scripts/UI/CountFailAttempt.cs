@@ -4,17 +4,19 @@ using UnityEngine.UI;
 public class CountFailAttempt : MonoBehaviour
 {
     private int totalAttempts = 0;
-    private Text failAttemptDisplay;
+    private Text textDisplay;
 
     private void Awake()
     {
-        failAttemptDisplay = GetComponent<Text>();
-        failAttemptDisplay.text = totalAttempts.ToString();
+        textDisplay = GetComponent<Text>();
+        UpdateTextDisplay();
     }
 
     public void OnPlayerDeath()
     {
         totalAttempts++;
-        failAttemptDisplay.text = totalAttempts.ToString();
+        UpdateTextDisplay();
     }
+
+    private void UpdateTextDisplay() => textDisplay.text = totalAttempts.ToString();
 }

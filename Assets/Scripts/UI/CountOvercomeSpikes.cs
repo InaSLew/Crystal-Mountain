@@ -3,12 +3,13 @@ using UnityEngine.UI;
 
 public class CountOvercomeSpikes : MonoBehaviour
 {
-    [SerializeField] private Text textDisplay;
     [SerializeField] private IntValue numberOvercomeSpikes;
+    private Text textDisplay;
 
     private void Awake()
     {
         numberOvercomeSpikes.Int = 0;
+        textDisplay = GetComponent<Text>();
         UpdateTextDisplay();
     }
 
