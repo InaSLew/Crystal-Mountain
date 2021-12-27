@@ -1520,7 +1520,6 @@ GameObject:
   - component: {fileID: 1926259022}
   - component: {fileID: 1926259021}
   - component: {fileID: 1926259020}
-  - component: {fileID: 1926259019}
   - component: {fileID: 1926259026}
   m_Layer: 0
   m_Name: Main Camera
@@ -1529,22 +1528,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1926259019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926259018}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1501e7929cbc79c4085880726fde3cf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberFailAttempts: {fileID: 1265683922}
-  status: {fileID: 1727537641}
-  death: {fileID: 1926259021}
-  throughTheGate: {fileID: 1926259020}
 --- !u!82 &1926259020
 AudioSource:
   m_ObjectHideFlags: 0
