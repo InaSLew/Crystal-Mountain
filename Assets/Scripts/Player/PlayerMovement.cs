@@ -44,9 +44,5 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Ground")) isOnGround.BoolValue = true;
     }
 
-    public void OnPlayerSpeedUp()
-    {
-        Debug.Log("TIME TO RAMP IT UP");
-        speed += addOnSpeed;
-    }
+    public void OnPlayerSpeedUp() => speed += addOnSpeed;
 }
