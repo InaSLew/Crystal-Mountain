@@ -163,7 +163,7 @@ MonoBehaviour:
   jumpSound: {fileID: 6745434395951730253}
   isOnGround: {fileID: 11400000, guid: f9e5662ab8c8e7a4389c80d613be22fa, type: 2}
   distanceTravelled: {fileID: 11400000, guid: 85643cb1ff2a4494499c87984a1e9bc3, type: 2}
-  addOnSpeed: 20
+  addOnSpeed: 30
 --- !u!82 &6745434395951730253
 AudioSource:
   m_ObjectHideFlags: 0
