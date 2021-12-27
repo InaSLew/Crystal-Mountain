@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// TODO: Make this class smaller
 public class GameControl : MonoBehaviour
 {
     private int totalAttempts = 0;
@@ -15,6 +16,8 @@ public class GameControl : MonoBehaviour
     public Text status;
     public AudioSource death;
     public AudioSource throughTheGate;
+    [SerializeField] private BooleanValue isGameOver;
+    
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -29,6 +32,7 @@ public class GameControl : MonoBehaviour
 
     public void OnPlayerIsDead()
     {
+        isGameOver.BoolValue = true;
         death.Play();
         player.SetActive(false);
         status.text = deathMsg;
@@ -46,6 +50,7 @@ public class GameControl : MonoBehaviour
 
     private void ResetGame()
     {
+        isGameOver.BoolValue = false;
         player.SetActive(true);
         player.transform.position = playerOriginalPosition;
         cam.transform.position = cameraOriginalPosition;

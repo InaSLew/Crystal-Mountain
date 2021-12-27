@@ -237,7 +237,7 @@ RectTransform:
   - {fileID: 1933233845}
   - {fileID: 1890955977}
   m_Father: {fileID: 2038557235}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47081754}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
   m_Name: 
@@ -348,6 +348,7 @@ MonoBehaviour:
   status: {fileID: 1727537641}
   death: {fileID: 1926259021}
   throughTheGate: {fileID: 1926259020}
+  isGameOver: {fileID: 11400000, guid: ae4b540b9ef675e4eb91d9d5e8d8375c, type: 2}
 --- !u!4 &376631644
 Transform:
   m_ObjectHideFlags: 0
@@ -931,7 +932,7 @@ RectTransform:
   - {fileID: 551062268}
   - {fileID: 1925555495}
   m_Father: {fileID: 2038557235}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2070,8 +2071,8 @@ RectTransform:
   - {fileID: 1727537640}
   - {fileID: 504975304}
   - {fileID: 1409852634}
-  - {fileID: 784152099}
   - {fileID: 47081755}
+  - {fileID: 784152099}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
