@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UpdateStatus : MonoBehaviour
@@ -23,7 +24,7 @@ public class UpdateStatus : MonoBehaviour
         AdjustBackgroundAlpha(0);
         UpdateTextDisplay("");
     }
-    
+
     private void AdjustBackgroundAlpha(float newAlpha)
     {
         var img = GetComponentInChildren<Image>();

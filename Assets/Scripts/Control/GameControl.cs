@@ -38,4 +38,8 @@ public class GameControl : MonoBehaviour
     public void QuitGame() => Application.Quit();
 
     public void LoadScene(int index) => SceneManager.LoadScene(index);
+    
+    public void PauseGame() => Time.timeScale = 0;
+    public void ResumeGame() => Time.timeScale = 1;
+    public void ReloadScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 }
