@@ -9,11 +9,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private FloatValue distanceTravelled;
     [SerializeField] private float addOnSpeed;
     private Rigidbody2D rb;
+    private Animator animator;
+    private static readonly int IsCrouching = Animator.StringToHash("IsCrouching");
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         distanceTravelled.Float = 0;
+        animator = GetComponent<Animator>();
     }
     
     private void FixedUpdate()
@@ -29,7 +32,21 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround.BoolValue) Jump();
+
+        if (Input.GetKey(KeyCode.LeftControl) && isOnGround.BoolValue) Crouch();
+        else UnCrouch();
+        
         distanceTravelled.Float = transform.localPosition.x;
+    }
+
+    private void UnCrouch()
+    {
+        animator.SetBool(IsCrouching, false);
+    }
+
+    private void Crouch()
+    {
+        animator.SetBool(IsCrouching, true);
     }
 
     private void Jump()
