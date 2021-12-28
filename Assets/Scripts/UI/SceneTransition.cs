@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour
 {
     private Animator animator;
+    private static readonly int FadeOut = Animator.StringToHash("fadeOut");
 
     private void Awake()
     {
@@ -12,7 +13,7 @@ public class SceneTransition : MonoBehaviour
 
     public void OnHasWinCondition()
     {
-        animator.SetTrigger("fadeOut");
+        animator.SetTrigger(FadeOut);
     }
 
     /// <summary>
