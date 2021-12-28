@@ -11,7 +11,6 @@ public class GameControl : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Player>().ONPlayerWin += ONPlayerWin; // <--- Retire target
-        isGameOver.BoolValue = false;
     }
 
     public void OnPlayerIsDead()
