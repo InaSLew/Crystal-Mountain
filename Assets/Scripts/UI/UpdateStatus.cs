@@ -12,7 +12,25 @@ public class UpdateStatus : MonoBehaviour
         textDisplay = GetComponent<Text>();
     }
 
-    public void OnPlayerDeath() => UpdateTextDisplay(deathMsg);
-    public void OnResetGame() => UpdateTextDisplay("");
+    public void OnPlayerDeath()
+    {
+        AdjustBackgroundAlpha(.2f);
+        UpdateTextDisplay(deathMsg);
+    }
+
+    public void OnResetGame()
+    {
+        AdjustBackgroundAlpha(0);
+        UpdateTextDisplay("");
+    }
+    
+    private void AdjustBackgroundAlpha(float newAlpha)
+    {
+        var img = GetComponentInChildren<Image>();
+        var tmpColor = img.color;
+        tmpColor.a = newAlpha;
+        img.color = tmpColor;
+    }
+    
     private void UpdateTextDisplay(string msg) => textDisplay.text = msg;
 }

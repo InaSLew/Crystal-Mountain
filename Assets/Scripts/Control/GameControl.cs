@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
@@ -33,4 +34,8 @@ public class GameControl : MonoBehaviour
         resetGame.Raise();
         player.SetActive(true);
     }
+
+    public void QuitGame() => Application.Quit();
+
+    public void LoadScene(int index) => SceneManager.LoadScene(index);
 }
