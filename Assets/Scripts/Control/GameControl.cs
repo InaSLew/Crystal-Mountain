@@ -11,7 +11,7 @@ public class GameControl : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Player>().ONPlayerWin += ONPlayerWin; // <--- Retire target
+        // player.GetComponent<Player>().ONPlayerWin += ONPlayerWin; // <--- Retire target
     }
 
     public void OnPlayerIsDead()
@@ -20,18 +20,20 @@ public class GameControl : MonoBehaviour
         player.SetActive(false);
         Invoke(nameof(ResetGame), 3f);
     }
-    
+
+    public void OnPlayerWin() => player.SetActive(false);
+
     public void QuitGame() => Application.Quit();
     public void PauseGame() => Time.timeScale = 0;
     public void ResumeGame() => Time.timeScale = 1;
     public void ReloadScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     // Retire target
-    private void ONPlayerWin(Player obj)
-    {
-        player.SetActive(false);
-        // status.text = winMsg;
-    }
+    // private void ONPlayerWin(Player obj)
+    // {
+    //     player.SetActive(false);
+    //     // status.text = winMsg;
+    // }
 
     private void ResetGame()
     {

@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameEvent playerIsDead;
-    public event Action<Player> ONPlayerWin; // <--- Retire target
+    [SerializeField] private GameEvent playerWin;
 
     public void OnCollideWithEnemy() => playerIsDead.Raise();
 
@@ -13,8 +12,8 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Gate")) CollideWithGate();
         else if (other.CompareTag("Ground")) PlayerIsFalling();
     }
-    
-    private void CollideWithGate() => ONPlayerWin?.Invoke(this);
+
+    private void CollideWithGate() => playerWin.Raise();
 
     private void PlayerIsFalling() => playerIsDead.Raise();
 }

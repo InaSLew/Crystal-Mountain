@@ -25,6 +25,12 @@ public class UpdateStatus : MonoBehaviour
         UpdateTextDisplay("");
     }
 
+    public void OnPlayerWin()
+    {
+        AdjustBackgroundAlpha(.2f);
+        UpdateTextDisplay(winMsg);
+    }
+
     private void AdjustBackgroundAlpha(float newAlpha)
     {
         var img = GetComponentInChildren<Image>();
