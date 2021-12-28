@@ -5,13 +5,13 @@ public class GameControl : MonoBehaviour
 {
     [SerializeField] private BooleanValue isGameOver;
     [SerializeField] private GameEvent resetGame;
-    
+
+    private readonly int FinishScene = 2;
     private GameObject player;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        // player.GetComponent<Player>().ONPlayerWin += ONPlayerWin; // <--- Retire target
     }
 
     public void OnPlayerIsDead()
@@ -28,12 +28,7 @@ public class GameControl : MonoBehaviour
     public void ResumeGame() => Time.timeScale = 1;
     public void ReloadScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-    // Retire target
-    // private void ONPlayerWin(Player obj)
-    // {
-    //     player.SetActive(false);
-    //     // status.text = winMsg;
-    // }
+    public void LoadFinishScene() => SceneManager.LoadScene(FinishScene);
 
     private void ResetGame()
     {

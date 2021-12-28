@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3515137272031338044}
   - component: {fileID: 3515137272031338042}
   - component: {fileID: 3881695075003723157}
+  - component: {fileID: 4352291404655399199}
   m_Layer: 5
   m_Name: Status
   m_TagString: Untagged
@@ -173,6 +174,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UpdateStatus, Assembly-CSharp
         m_MethodName: OnPlayerWin
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4352291404655399199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3515137272031338032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaafc979223745645bd92f50902d125c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intEvent: {fileID: 11400000, guid: 51d933c8880d1bb479daa7551b23c4a6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3515137272031338043}
+        m_TargetAssemblyTypeName: UpdateStatus, Assembly-CSharp
+        m_MethodName: OnPlayerSpeedUp
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

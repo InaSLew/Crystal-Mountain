@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 758915934486107439}
   - component: {fileID: 758915934486107438}
   - component: {fileID: 8146632925816918041}
+  - component: {fileID: 1892689834540822583}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -95,6 +96,34 @@ MonoBehaviour:
       - m_Target: {fileID: 758915934486107439}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: OnPlayerWin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1892689834540822583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758915934486107437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voidEvent: {fileID: 11400000, guid: 15d0b37f0a4d4ef4e944c666d9b4ba54, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 758915934486107439}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: LoadFinishScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

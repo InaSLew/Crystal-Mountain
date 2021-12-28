@@ -642,12 +642,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Dodge as many ice spikes as you can
+  m_text: '- Dodge the ice spikes!
 
     - Space to jump
 
-    - Left
-    ctrl to crouch'
+    - Left ctrl to crouch'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8bc0033f4a069cb4b97ebc22ab3ccd33, type: 2}
   m_sharedMaterial: {fileID: 1861098168770176869, guid: 8bc0033f4a069cb4b97ebc22ab3ccd33, type: 2}
@@ -674,7 +673,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.65
+  m_fontSize: 56.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1668,7 +1667,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOvercomeSpikes: {fileID: 11400000, guid: c5f770638a084044096b83fa5e2428ed, type: 2}
   playerSpeedUp: {fileID: 11400000, guid: 51d933c8880d1bb479daa7551b23c4a6, type: 2}
+  hasWinCondition: {fileID: 11400000, guid: 15d0b37f0a4d4ef4e944c666d9b4ba54, type: 2}
   speedUpThreshold: 5
+  spikeOvercomeToWin: 20
 --- !u!1 &1925555494
 GameObject:
   m_ObjectHideFlags: 0

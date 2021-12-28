@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UpdateStatus : MonoBehaviour
@@ -19,16 +18,19 @@ public class UpdateStatus : MonoBehaviour
         UpdateTextDisplay(deathMsg);
     }
 
-    public void OnResetGame()
-    {
-        AdjustBackgroundAlpha(0);
-        UpdateTextDisplay("");
-    }
+    public void OnResetGame() => HideStatus();
 
     public void OnPlayerWin()
     {
         AdjustBackgroundAlpha(.2f);
         UpdateTextDisplay(winMsg);
+    }
+
+    public void OnPlayerSpeedUp(int spikesLeft)
+    {
+        AdjustBackgroundAlpha(.2f);
+        UpdateTextDisplay($"{spikesLeft} spikes to go! Go a lil' faster!");
+        Invoke(nameof(HideStatus), 1f);
     }
 
     private void AdjustBackgroundAlpha(float newAlpha)
@@ -40,4 +42,10 @@ public class UpdateStatus : MonoBehaviour
     }
     
     private void UpdateTextDisplay(string msg) => textDisplay.text = msg;
+
+    private void HideStatus()
+    {
+        AdjustBackgroundAlpha(0);
+        UpdateTextDisplay("");
+    }
 }
