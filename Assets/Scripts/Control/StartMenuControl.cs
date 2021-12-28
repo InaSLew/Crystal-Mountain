@@ -45,10 +45,7 @@ public class StartMenuControl : MonoBehaviour
         }
     }
 
-    private void StartGame()
-    {
-        SceneManager.LoadScene(MainScene);
-    }
+    private void StartGame() => SceneManager.LoadScene(MainScene);
 
     private void QuitGame() => Application.Quit();
 
