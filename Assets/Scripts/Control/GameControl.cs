@@ -20,6 +20,11 @@ public class GameControl : MonoBehaviour
         player.SetActive(false);
         Invoke(nameof(ResetGame), 3f);
     }
+    
+    public void QuitGame() => Application.Quit();
+    public void PauseGame() => Time.timeScale = 0;
+    public void ResumeGame() => Time.timeScale = 1;
+    public void ReloadScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     // Retire target
     private void ONPlayerWin(Player obj)
@@ -34,12 +39,4 @@ public class GameControl : MonoBehaviour
         resetGame.Raise();
         player.SetActive(true);
     }
-
-    public void QuitGame() => Application.Quit();
-
-    public void LoadScene(int index) => SceneManager.LoadScene(index);
-    
-    public void PauseGame() => Time.timeScale = 0;
-    public void ResumeGame() => Time.timeScale = 1;
-    public void ReloadScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 }
