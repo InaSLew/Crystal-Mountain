@@ -6,7 +6,7 @@ public class GameControl : MonoBehaviour
     [SerializeField] private BooleanValue isGameOver;
     [SerializeField] private GameEvent resetGame;
 
-    private readonly int FinishScene = 2;
+    // private readonly int FinishScene = 2;
     private GameObject player;
 
     private void Awake()
@@ -28,7 +28,7 @@ public class GameControl : MonoBehaviour
     public void ResumeGame() => Time.timeScale = 1;
     public void ReloadScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-    public void LoadFinishScene() => SceneManager.LoadScene(FinishScene);
+    // public void LoadFinishScene() => SceneManager.LoadScene(FinishScene);
 
     private void ResetGame()
     {
