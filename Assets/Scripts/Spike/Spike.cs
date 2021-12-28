@@ -1,9 +1,20 @@
 using UnityEngine;
 
+/// <summary>
+/// Attached to all 3 different spike variants (triangle, square and icicle).
+/// Controls whether to emit IsCollideWithPlayer or not
+/// </summary>
+
 public class Spike : MonoBehaviour
 {
     [SerializeField] private GameEvent IsCollideWithPlayer;
     [SerializeField] private BooleanValue playerIsOnGround;
+
+    private GameObject player;
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -18,7 +29,10 @@ public class Spike : MonoBehaviour
 
     private bool IsPlayerAboveSpike()
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
-        return player.transform.position.y > transform.position.y;
+        var playerSprite = player.GetComponent<SpriteRenderer>();
+        var playerLowestBoundOnY = player.transform.position.y - playerSprite.bounds.min.y / 2;
+        var spikeHighestOnY = transform.position.y;
+        
+        return playerLowestBoundOnY > spikeHighestOnY;
     }
 }

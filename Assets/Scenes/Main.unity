@@ -507,7 +507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544317, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_Name
-      value: SpikeSpawnPoint (1)
+      value: SquareSpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544317, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_IsActive
@@ -1658,7 +1658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544317, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_Name
-      value: SpikeSpawnPoint (2)
+      value: IcicleSpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544317, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_IsActive
@@ -2442,7 +2442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544317, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_Name
-      value: SpikeSpawnPoint
+      value: TriangleSpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544317, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_IsActive
@@ -2624,7 +2624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6745434395951730295, guid: 4e841d4755b173541bbf7c7423919bf2, type: 3}
       propertyPath: jumpForce
-      value: 4.75
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e841d4755b173541bbf7c7423919bf2, type: 3}
