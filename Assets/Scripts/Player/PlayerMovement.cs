@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Run- and jump-related")]
     [SerializeField] private float speed;
+    [SerializeField] private float addOnSpeed;
     [SerializeField] private float jumpForce;
+    
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private BooleanValue isOnGround;
     [SerializeField] private FloatValue distanceTravelled;
-    [SerializeField] private float addOnSpeed;
+    
     private Rigidbody2D rb;
     private Animator animator;
     private static readonly int IsCrouching = Animator.StringToHash("IsCrouching");
@@ -39,15 +42,8 @@ public class PlayerMovement : MonoBehaviour
         distanceTravelled.Float = transform.localPosition.x;
     }
 
-    private void UnCrouch()
-    {
-        animator.SetBool(IsCrouching, false);
-    }
-
-    private void Crouch()
-    {
-        animator.SetBool(IsCrouching, true);
-    }
+    private void Crouch() => animator.SetBool(IsCrouching, true);
+    private void UnCrouch() => animator.SetBool(IsCrouching, false);
 
     private void Jump()
     {

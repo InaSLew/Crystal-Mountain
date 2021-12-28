@@ -2,20 +2,19 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-    private GameObject spawnPoint;
-    private Vector3 camOffset;
-    private Vector3 spawnOffset;
+    [SerializeField] private float smoothSpeed;
+    private GameObject player;
+    private Vector3 offset;
 
     private void Awake()
     {
-        var position = transform.position;
-        camOffset = position - player.transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
+        offset = transform.position - player.transform.position;
     }
 
     private void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, player.transform.position + camOffset, .1f);
-        // might be an overkill but consider Vector3.SmoothDamp
+        var targetPosition = player.transform.position + offset;
+        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed);
     }
 }
