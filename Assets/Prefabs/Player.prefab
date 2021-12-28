@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 6745434395951730293}
   - component: {fileID: 6745434395951730295}
   - component: {fileID: 6745434395951730253}
-  - component: {fileID: 6745434395951730252}
   - component: {fileID: 6745434395465782261}
   - component: {fileID: 9022095465558046723}
+  - component: {fileID: 4793918525056946430}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -159,11 +159,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  addOnSpeed: 30
   jumpForce: 6
   jumpSound: {fileID: 6745434395951730253}
   isOnGround: {fileID: 11400000, guid: f9e5662ab8c8e7a4389c80d613be22fa, type: 2}
   distanceTravelled: {fileID: 11400000, guid: 85643cb1ff2a4494499c87984a1e9bc3, type: 2}
-  addOnSpeed: 30
 --- !u!82 &6745434395951730253
 AudioSource:
   m_ObjectHideFlags: 0
@@ -260,22 +260,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!70 &6745434395951730252
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6745434395951730288}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.02600646, y: 0.013003111}
-  m_Size: {x: 0.37584734, y: 0.6879244}
-  m_Direction: 0
 --- !u!114 &6745434395465782261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,3 +316,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!70 &4793918525056946430
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6745434395951730288}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008823171, y: -0.000000029802322}
+  m_Size: {x: 0.29062006, y: 0.70354277}
+  m_Direction: 0
