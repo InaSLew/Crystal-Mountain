@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - TriangleSpike
   - SquareSpike
+  - IcicleSpike
   layers:
   - Default
   - TransparentFX
