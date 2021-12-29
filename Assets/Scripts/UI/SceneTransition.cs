@@ -16,11 +16,18 @@ public class SceneTransition : MonoBehaviour
         animator.SetTrigger(FadeOut);
     }
 
+    public void OnPlayerWin()
+    {
+        animator.SetTrigger(FadeOut);
+    }
+
     /// <summary>
     /// An animation event that fires when animation FadingOut completes. See the animation clip asset FadingOut
     /// </summary>
     public void OnFadeOutComplete()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        var activeScene = SceneManager.GetActiveScene().buildIndex;
+        if (activeScene == SceneManager.sceneCountInBuildSettings - 1) SceneManager.LoadScene(0);
+        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
