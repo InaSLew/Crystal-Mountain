@@ -15,12 +15,14 @@ public class CountOvercomeSpikes : MonoBehaviour
     
     [Header("When to speed up and winning condition")]
     [SerializeField] private int speedUpThreshold;
-    [SerializeField] private int spikeOvercomeToWin;
+    [SerializeField] private IntValue numberTotalSpikes;
     private Text textDisplay;
+    private int totalSpikes;
 
     private void Awake()
     {
         numberOvercomeSpikes.Int = 0;
+        totalSpikes = numberTotalSpikes.Int;
         textDisplay = GetComponent<Text>();
         UpdateTextDisplay();
     }
@@ -30,10 +32,10 @@ public class CountOvercomeSpikes : MonoBehaviour
         numberOvercomeSpikes.Int++;
         UpdateTextDisplay();
         if (HasHitWinCondition()) hasWinCondition.Raise(new GenericVoid()); 
-        else if (HasHitSpeedUpThreshold()) playerSpeedUp.Raise(spikeOvercomeToWin - numberOvercomeSpikes.Int);
+        else if (HasHitSpeedUpThreshold()) playerSpeedUp.Raise(totalSpikes - numberOvercomeSpikes.Int);
     }
 
-    private bool HasHitWinCondition() => numberOvercomeSpikes.Int == spikeOvercomeToWin;
+    private bool HasHitWinCondition() => numberOvercomeSpikes.Int == numberTotalSpikes.Int;
 
     private bool HasHitSpeedUpThreshold() => numberOvercomeSpikes.Int % speedUpThreshold == 0;
 

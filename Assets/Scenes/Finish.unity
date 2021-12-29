@@ -815,6 +815,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Status
       objectReference: {fileID: 0}
+    - target: {fileID: 3515137272031338043, guid: 014fefa4a4f414e45a29ca4b37b1f346, type: 3}
+      propertyPath: totalAttempts
+      value: 
+      objectReference: {fileID: 11400000, guid: b09e7c8603b2a364a93547d32a492195, type: 2}
     - target: {fileID: 3515137272031338047, guid: 014fefa4a4f414e45a29ca4b37b1f346, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1306,9 +1310,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1813956394}
     m_Modifications:
+    - target: {fileID: 1132748949478987003, guid: 65110499ff27feb4198102216f1ef043, type: 3}
+      propertyPath: isGameOver
+      value: 
+      objectReference: {fileID: 11400000, guid: ae4b540b9ef675e4eb91d9d5e8d8375c, type: 2}
     - target: {fileID: 1132748949478987004, guid: 65110499ff27feb4198102216f1ef043, type: 3}
       propertyPath: m_Name
       value: SceneTransition
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132748949478987004, guid: 65110499ff27feb4198102216f1ef043, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1132748949478987007, guid: 65110499ff27feb4198102216f1ef043, type: 3}
       propertyPath: m_Pivot.x
@@ -1401,50 +1413,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1132748949478987007, guid: 65110499ff27feb4198102216f1ef043, type: 3}
   m_PrefabInstance: {fileID: 1998898373}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1998898375 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1132748949478987004, guid: 65110499ff27feb4198102216f1ef043, type: 3}
-  m_PrefabInstance: {fileID: 1998898373}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1998898376 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1132748949478987003, guid: 65110499ff27feb4198102216f1ef043, type: 3}
-  m_PrefabInstance: {fileID: 1998898373}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998898375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014e41be57b4b084988e47734539ffc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1998898377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998898375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bc5a39afb4304045bdbe82f4e43e8e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: b55e1fd20f7c16e4a9581e5d8f2920b2, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1998898376}
-        m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
-        m_MethodName: OnPlayerWin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &6421534302057494867
 PrefabInstance:
   m_ObjectHideFlags: 0

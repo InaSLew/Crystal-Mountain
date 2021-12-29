@@ -6,8 +6,8 @@ using UnityEngine.UI;
 /// </summary>
 public class UpdateStatus : MonoBehaviour
 {
+    [SerializeField] private IntValue totalAttempts;
     private readonly string deathMsg = "YOU DIED :'( RESTART IN 3 seconds...";
-    private readonly string winMsg = "YOU WIN :D";
     private Text textDisplay;
 
     private void Awake()
@@ -26,7 +26,7 @@ public class UpdateStatus : MonoBehaviour
     public void OnPlayerWin()
     {
         AdjustBackgroundAlpha(.2f);
-        UpdateTextDisplay(winMsg);
+        UpdateTextDisplay($"After {totalAttempts.Int} tries, you won :D Press any key...");
     }
 
     public void OnPlayerSpeedUp(int spikesLeft)

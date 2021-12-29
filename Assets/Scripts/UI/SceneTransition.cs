@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,20 +7,22 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SceneTransition : MonoBehaviour
 {
+    [SerializeField] private BooleanValue isGameOver;
     private Animator animator;
     private static readonly int FadeOut = Animator.StringToHash("fadeOut");
+    private readonly int FinishScene = 2;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
 
-    public void OnHasWinCondition()
+    private void Update()
     {
-        animator.SetTrigger(FadeOut);
+        if (SceneManager.GetActiveScene().buildIndex == FinishScene && isGameOver.BoolValue && Input.anyKeyDown) animator.SetTrigger(FadeOut);
     }
 
-    public void OnPlayerWin()
+    public void OnHasWinCondition()
     {
         animator.SetTrigger(FadeOut);
     }
