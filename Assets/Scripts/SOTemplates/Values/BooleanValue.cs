@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Scriptable object to store a value of Boolean
+/// </summary>
 [CreateAssetMenu(fileName = "BooleanValue", menuName = "Value/BooleanValue")]
 public class BooleanValue : ScriptableObject
 {

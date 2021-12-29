@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Random;
 
+/// <summary>
+/// Stores data on spike spawn (adjustable through editor) and controls queuing and dequeuing of spike
+/// </summary>
 [CreateAssetMenu(fileName = "SpikeSpawn", menuName = "Game/SpikeSpawn")]
 public class SpikeSpawn : ScriptableObject
 {
