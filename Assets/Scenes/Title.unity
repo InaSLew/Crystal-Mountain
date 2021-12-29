@@ -472,25 +472,25 @@ MonoBehaviour:
     Jump
     - CS50''s game50/fifty-bird through Github repository
 
-    Select ("Select 1")
-    - Prius247 through OpenGameArt.org
+    MenuPing - Hannes
+    Shen-Lewander
 
-    Death("Breaking Bottle") - spookymodem
-    through OpenGameArt.org
+    Death("Breaking Bottle") - spookymodem through OpenGameArt.org
 
-    ThroughTheGate ("Magic Smite") - spookymodem through
-    OpenGameArt.org
+    ThroughTheGate
+    ("Magic Smite") - spookymodem through OpenGameArt.org
 
     ---
 
     FONT
 
-    The font is from CS50''s game50/pong
-    through Github repository
+    The
+    font is from CS50''s game50/pong through Github repository
 
     ---
 
-    Press Q to close this window :)'
+    Press
+    Q to close this window :)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8bc0033f4a069cb4b97ebc22ab3ccd33, type: 2}
   m_sharedMaterial: {fileID: 1861098168770176869, guid: 8bc0033f4a069cb4b97ebc22ab3ccd33, type: 2}
@@ -1492,9 +1492,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7121536225d0f2043aed5aafa22caa49, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b683e801f62780f49922e0c5b12e4580, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

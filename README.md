@@ -1,9 +1,9 @@
 # Crystal Mountain
 
-✏ This game was originally made between 13 - 17/09/2021 as a school project; later to be expanded into an endless runner.
+## About
 
-✏ All the pixel art sprites and background image are made by me.
+Crystal Mountain is a side-scrolling runner where the player dodges 3 different kinds of ice spikes through jumping and docking. The numebr of ice spikes to overcome to win is randomized upon every new game, between 20, 30, 40 and 50.
 
-✏ Credits to pixelsphere.org, opengameart.org and CS50's Introduction to Game Development for the retro font, sound effects and music.
-
-💻 [WebGL demo here (desktop browser only)](https://play.unity.com/mg/other/the-impossible-game-crystal-mountain)
+## How to play
+- Space to jump over ice spikes
+- Left ctrl to dock
