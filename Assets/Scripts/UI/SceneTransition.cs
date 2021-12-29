@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Transitions between scenes through playing fading-in and -out animations
+/// </summary>
 public class SceneTransition : MonoBehaviour
 {
     private Animator animator;

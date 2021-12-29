@@ -1,11 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Keeps track of how many spikes player's overcome.
+/// </summary>
 public class CountOvercomeSpikes : MonoBehaviour
 {
+    [Header("Number Of spikes player overcomes")]
     [SerializeField] private IntValue numberOvercomeSpikes;
+    
+    [Header("Game events")]
     [SerializeField] private IntGameEvent playerSpeedUp;
     [SerializeField] private VoidGameEvent hasWinCondition;
+    
+    [Header("When to speed up and winning condition")]
     [SerializeField] private int speedUpThreshold;
     [SerializeField] private int spikeOvercomeToWin;
     private Text textDisplay;

@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Listens for game events and displays in-game status to player accordingly.
+/// </summary>
 public class UpdateStatus : MonoBehaviour
 {
     private readonly string deathMsg = "YOU DIED :'( RESTART IN 3 seconds...";

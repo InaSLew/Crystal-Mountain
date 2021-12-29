@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Increments player's total failed attempts/runs everytime VoidGameEvent PlayerIsDead fires 
+/// </summary>
 public class CountFailAttempt : MonoBehaviour
 {
     private int totalAttempts = 0;
