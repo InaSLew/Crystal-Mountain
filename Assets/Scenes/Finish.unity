@@ -1027,6 +1027,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6303457129723076893, guid: 11ec2c82d2286bc458618dc19d03e437, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6303457129723076894, guid: 11ec2c82d2286bc458618dc19d03e437, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1037,50 +1041,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11ec2c82d2286bc458618dc19d03e437, type: 3}
---- !u!1 &1252355496 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6303457129723076898, guid: 11ec2c82d2286bc458618dc19d03e437, type: 3}
-  m_PrefabInstance: {fileID: 1252355495}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1252355497 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6303457129723076895, guid: 11ec2c82d2286bc458618dc19d03e437, type: 3}
-  m_PrefabInstance: {fileID: 1252355495}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252355496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bebddd5a8b6118e41959725cdba367be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1252355498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252355496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voidEvent: {fileID: 11400000, guid: b55e1fd20f7c16e4a9581e5d8f2920b2, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1252355497}
-        m_TargetAssemblyTypeName: SoundControl, Assembly-CSharp
-        m_MethodName: OnPlayerThroughGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1762804921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1466,11 +1426,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1998898375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bc5a39afb4304045bdbe82f4e43e8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voidEvent: {fileID: 11400000, guid: b55e1fd20f7c16e4a9581e5d8f2920b2, type: 2}
-  Response:
+  gameEvent: {fileID: 11400000, guid: b55e1fd20f7c16e4a9581e5d8f2920b2, type: 2}
+  unityEventResponse:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1998898376}

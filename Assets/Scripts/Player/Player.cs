@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private GameEvent playerIsDead;
-    [SerializeField] private GameEvent playerWin;
+    [SerializeField] private VoidGameEvent playerIsDead;
+    [SerializeField] private VoidGameEvent playerWin;
 
-    public void OnCollideWithEnemy() => playerIsDead.Raise();
+    public void OnCollideWithEnemy() => playerIsDead.Raise(new GenericVoid());
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
         else if (other.CompareTag("Ground")) PlayerIsFalling();
     }
 
-    private void CollideWithGate() => playerWin.Raise();
+    private void CollideWithGate() => playerWin.Raise(new GenericVoid());
 
-    private void PlayerIsFalling() => playerIsDead.Raise();
+    private void PlayerIsFalling() => playerIsDead.Raise(new GenericVoid());
 }

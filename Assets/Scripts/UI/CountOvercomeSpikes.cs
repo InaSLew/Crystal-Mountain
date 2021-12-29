@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class CountOvercomeSpikes : MonoBehaviour
 {
     [SerializeField] private IntValue numberOvercomeSpikes;
-    [SerializeField] private GameEventInt playerSpeedUp;
-    [SerializeField] private GameEvent hasWinCondition;
+    [SerializeField] private IntGameEvent playerSpeedUp;
+    [SerializeField] private VoidGameEvent hasWinCondition;
     [SerializeField] private int speedUpThreshold;
     [SerializeField] private int spikeOvercomeToWin;
     private Text textDisplay;
@@ -21,7 +21,7 @@ public class CountOvercomeSpikes : MonoBehaviour
     {
         numberOvercomeSpikes.Int++;
         UpdateTextDisplay();
-        if (HasHitWinCondition()) hasWinCondition.Raise(); 
+        if (HasHitWinCondition()) hasWinCondition.Raise(new GenericVoid()); 
         else if (HasHitSpeedUpThreshold()) playerSpeedUp.Raise(spikeOvercomeToWin - numberOvercomeSpikes.Int);
     }
 

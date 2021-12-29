@@ -1092,7 +1092,7 @@ GameObject:
   - component: {fileID: 1265683923}
   - component: {fileID: 1265683922}
   - component: {fileID: 1265683925}
-  - component: {fileID: 1265683924}
+  - component: {fileID: 1265683926}
   m_Layer: 5
   m_Name: CountFailAttempt
   m_TagString: Untagged
@@ -1162,34 +1162,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265683920}
   m_CullTransparentMesh: 1
---- !u!114 &1265683924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265683920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voidEvent: {fileID: 11400000, guid: 1dc83aaa7fc2f3f42b602f9fcc5b62ec, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1265683925}
-        m_TargetAssemblyTypeName: CountFailedAttempt, Assembly-CSharp
-        m_MethodName: OnPlayerDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1265683925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,6 +1174,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f7cc75c94cc95468b0f69d69500335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1265683926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265683920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc5a39afb4304045bdbe82f4e43e8e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1dc83aaa7fc2f3f42b602f9fcc5b62ec, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1265683925}
+        m_TargetAssemblyTypeName: CountFailAttempt, Assembly-CSharp
+        m_MethodName: OnPlayerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1281167119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,7 +1560,7 @@ GameObject:
   - component: {fileID: 1890955979}
   - component: {fileID: 1890955978}
   - component: {fileID: 1890955981}
-  - component: {fileID: 1890955980}
+  - component: {fileID: 1890955982}
   m_Layer: 5
   m_Name: CountOvercomeSpikes
   m_TagString: Untagged
@@ -1630,34 +1630,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890955976}
   m_CullTransparentMesh: 1
---- !u!114 &1890955980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890955976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voidEvent: {fileID: 11400000, guid: a94dc9d049b3a5147ba9adbb5e4cf230, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1890955981}
-        m_TargetAssemblyTypeName: CountOvercomeSpikes, Assembly-CSharp
-        m_MethodName: OnSpikeOvercome
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1890955981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,6 +1647,34 @@ MonoBehaviour:
   hasWinCondition: {fileID: 11400000, guid: 15d0b37f0a4d4ef4e944c666d9b4ba54, type: 2}
   speedUpThreshold: 5
   spikeOvercomeToWin: 20
+--- !u!114 &1890955982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890955976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc5a39afb4304045bdbe82f4e43e8e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d57133be75b3b9248ac1399344045062, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1890955981}
+        m_TargetAssemblyTypeName: CountOvercomeSpikes, Assembly-CSharp
+        m_MethodName: OnSpikeOvercome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1925555494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,17 +2340,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1563502123701544312, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
-      propertyPath: launchDelayInSeconds
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544317, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_Name
       value: TriangleSpawnPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563502123701544317, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1563502123701544318, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_RootOrder
@@ -2395,18 +2387,6 @@ PrefabInstance:
     - target: {fileID: 1563502123701544318, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563502123701544319, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
-      propertyPath: gizmoColor.b
-      value: 0.056114297
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563502123701544319, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
-      propertyPath: gizmoColor.g
-      value: 0.056114297
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563502123701544319, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
-      propertyPath: gizmoColor.r
-      value: 0.9150943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc9d6e1359c79f944a705b76614b8dee, type: 3}
@@ -2674,10 +2654,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6303457129723076888, guid: 11ec2c82d2286bc458618dc19d03e437, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6303457129723076893, guid: 11ec2c82d2286bc458618dc19d03e437, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6303457129723076898, guid: 11ec2c82d2286bc458618dc19d03e437, type: 3}

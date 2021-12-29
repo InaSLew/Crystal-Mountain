@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3515137272031338045}
   - component: {fileID: 3515137272031338046}
   - component: {fileID: 3515137272031338043}
-  - component: {fileID: 3515137272031338044}
-  - component: {fileID: 3515137272031338042}
-  - component: {fileID: 3881695075003723157}
-  - component: {fileID: 4352291404655399199}
+  - component: {fileID: 270345734033388751}
+  - component: {fileID: 7168862505749805281}
+  - component: {fileID: 5226779565401039443}
+  - component: {fileID: 8241563865717745114}
   m_Layer: 5
   m_Name: Status
   m_TagString: Untagged
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda09767534160b458c6d5032690f7b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3515137272031338044
+--- !u!114 &270345734033388751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,11 +107,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3515137272031338032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bc5a39afb4304045bdbe82f4e43e8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voidEvent: {fileID: 11400000, guid: 1dc83aaa7fc2f3f42b602f9fcc5b62ec, type: 2}
-  Response:
+  gameEvent: {fileID: 11400000, guid: 1dc83aaa7fc2f3f42b602f9fcc5b62ec, type: 2}
+  unityEventResponse:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3515137272031338043}
@@ -126,7 +126,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3515137272031338042
+--- !u!114 &7168862505749805281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,17 +135,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3515137272031338032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
+  m_Script: {fileID: 11500000, guid: a0470eb86da13184a834cde83549080e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voidEvent: {fileID: 11400000, guid: fe63946081323b449955be8811cc227c, type: 2}
-  Response:
+  gameEvent: {fileID: 11400000, guid: 51d933c8880d1bb479daa7551b23c4a6, type: 2}
+  unityEventResponse:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3515137272031338043}
         m_TargetAssemblyTypeName: UpdateStatus, Assembly-CSharp
-        m_MethodName: OnResetGame
-        m_Mode: 1
+        m_MethodName: OnPlayerSpeedUp
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -154,7 +154,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3881695075003723157
+--- !u!114 &5226779565401039443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,11 +163,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3515137272031338032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bc5a39afb4304045bdbe82f4e43e8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voidEvent: {fileID: 11400000, guid: b55e1fd20f7c16e4a9581e5d8f2920b2, type: 2}
-  Response:
+  gameEvent: {fileID: 11400000, guid: b55e1fd20f7c16e4a9581e5d8f2920b2, type: 2}
+  unityEventResponse:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3515137272031338043}
@@ -182,7 +182,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4352291404655399199
+--- !u!114 &8241563865717745114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,17 +191,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3515137272031338032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaafc979223745645bd92f50902d125c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bc5a39afb4304045bdbe82f4e43e8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intEvent: {fileID: 11400000, guid: 51d933c8880d1bb479daa7551b23c4a6, type: 2}
-  Response:
+  gameEvent: {fileID: 11400000, guid: bcde6da63fe022942a17e67a59f20026, type: 2}
+  unityEventResponse:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3515137272031338043}
         m_TargetAssemblyTypeName: UpdateStatus, Assembly-CSharp
-        m_MethodName: OnPlayerSpeedUp
-        m_Mode: 0
+        m_MethodName: OnResetGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

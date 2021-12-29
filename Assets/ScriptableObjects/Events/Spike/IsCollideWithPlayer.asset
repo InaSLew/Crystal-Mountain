@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36c0c82424a5d5a4ba60eb2b3b771737, type: 3}
+  m_Script: {fileID: 11500000, guid: 77c6d3092ead5624b9fea8a1ab4ad3c5, type: 3}
   m_Name: IsCollideWithPlayer
   m_EditorClassIdentifier: 

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cee47c270a78ff4aae7a28c0bd0190d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spikeIsOvercome: {fileID: 11400000, guid: a94dc9d049b3a5147ba9adbb5e4cf230, type: 2}
+  spikeIsOvercome: {fileID: 11400000, guid: d57133be75b3b9248ac1399344045062, type: 2}
 --- !u!61 &4378191688161072128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2725198598a330b429a99ba6556ad085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsCollideWithPlayer: {fileID: 11400000, guid: bb310f47e3b5a084d96a1b1cafed8dd3, type: 2}
+  IsCollideWithPlayer: {fileID: 11400000, guid: c9f9c8bf896b27147b4303c90cd37b40, type: 2}
   playerIsOnGround: {fileID: 11400000, guid: f9e5662ab8c8e7a4389c80d613be22fa, type: 2}
 --- !u!114 &-7410845275810687155
 MonoBehaviour:

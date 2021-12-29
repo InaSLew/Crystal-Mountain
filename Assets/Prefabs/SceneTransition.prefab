@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1132748949478987001}
   - component: {fileID: 1132748949478987006}
   - component: {fileID: 1132748949478987003}
-  - component: {fileID: 1132748949478987002}
+  - component: {fileID: 5875054762811316254}
   m_Layer: 5
   m_Name: SceneTransition
   m_TagString: Untagged
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014e41be57b4b084988e47734539ffc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1132748949478987002
+--- !u!114 &5875054762811316254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,11 +120,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1132748949478987004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a7a5eb1d52fee46a9f54b7e06d2973, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bc5a39afb4304045bdbe82f4e43e8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voidEvent: {fileID: 11400000, guid: 15d0b37f0a4d4ef4e944c666d9b4ba54, type: 2}
-  Response:
+  gameEvent: {fileID: 11400000, guid: 15d0b37f0a4d4ef4e944c666d9b4ba54, type: 2}
+  unityEventResponse:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1132748949478987003}

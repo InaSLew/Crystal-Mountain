@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour
 {
     [SerializeField] private BooleanValue isGameOver;
-    [SerializeField] private GameEvent resetGame;
+    [SerializeField] private VoidGameEvent resetGame;
 
     private GameObject player;
 
@@ -37,7 +37,7 @@ public class GameControl : MonoBehaviour
     private void ResetGame()
     {
         isGameOver.BoolValue = false;
-        resetGame.Raise();
+        resetGame.Raise(new GenericVoid());
         player.SetActive(true);
     }
 }

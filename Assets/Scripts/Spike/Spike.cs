@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    [SerializeField] private GameEvent IsCollideWithPlayer;
+    [SerializeField] private VoidGameEvent IsCollideWithPlayer;
     [SerializeField] private BooleanValue playerIsOnGround;
 
     private GameObject player;
@@ -19,11 +19,11 @@ public class Spike : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (!other.collider.CompareTag("Player")) return;
-        if (gameObject.CompareTag("TriangleSpike")) IsCollideWithPlayer.Raise();
+        if (gameObject.CompareTag("TriangleSpike")) IsCollideWithPlayer.Raise(new GenericVoid());
         else if (gameObject.CompareTag("SquareSpike") || gameObject.CompareTag("IcicleSpike"))
         {
             if (IsPlayerAboveSpike()) playerIsOnGround.BoolValue = true;
-            else IsCollideWithPlayer.Raise();
+            else IsCollideWithPlayer.Raise(new GenericVoid());
         }
     }
 
