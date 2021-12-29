@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// A basic camera follow script with adjustable smooth speed through editor
+/// </summary>
 public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private float smoothSpeed;

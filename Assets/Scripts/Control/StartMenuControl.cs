@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Controls start menu option selecting, confirming and what follows after selecting
+/// </summary>
 public class StartMenuControl : MonoBehaviour
 {
+    [Header("Options and credit page")]
     [SerializeField] private GameObject start;
     [SerializeField] private GameObject quit;
     [SerializeField] private GameObject credit;
@@ -76,6 +80,7 @@ public class StartMenuControl : MonoBehaviour
         else if (selectedOption == quit) QuitGame();
         else if (selectedOption == credit) creditPage.SetActive(true);
     }
+    
     private void CloseCreditPage()
     {
         if (!credit.activeInHierarchy) return;
@@ -84,6 +89,7 @@ public class StartMenuControl : MonoBehaviour
     
     private void StartGame() => SceneManager.LoadScene(MainScene);
     private void QuitGame() => Application.Quit();
+    
     private void IncreaseAlphaOnSelectedOption()
     {
         var img = selectedOption.GetComponent<TextMeshProUGUI>().GetComponentInChildren<Image>();
@@ -91,6 +97,7 @@ public class StartMenuControl : MonoBehaviour
         tmpColor.a = .4f;
         img.color = tmpColor;
     }
+    
     private void DecreaseAlphaOnIdleOption(GameObject idleOption)
     {
         var img = idleOption.GetComponent<TextMeshProUGUI>().GetComponentInChildren<Image>();

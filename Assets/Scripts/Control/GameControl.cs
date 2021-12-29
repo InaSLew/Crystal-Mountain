@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// The class contains many public exposed methods for listening for game events and reacting upon it
+/// </summary>
 public class GameControl : MonoBehaviour
 {
     [SerializeField] private BooleanValue isGameOver;
@@ -21,7 +24,12 @@ public class GameControl : MonoBehaviour
     }
 
     public void OnPlayerWin() => player.SetActive(false);
-    public void QuitGame() => Application.Quit();
+
+    public void QuitGame()
+    {
+        isGameOver.BoolValue = false;
+        Application.Quit();
+    }
     public void PauseGame() => Time.timeScale = 0;
     public void ResumeGame() => Time.timeScale = 1;
     public void ReloadScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

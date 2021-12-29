@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Plays the sound effects and the background music
+/// </summary>
 public class SoundControl : MonoBehaviour
 {
     [Header("Audio source files")]
