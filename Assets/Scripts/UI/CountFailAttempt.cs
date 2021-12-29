@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CountFailAttempt : MonoBehaviour
 {
     [SerializeField] private IntValue totalAttempts;
-    //private int totalAttempts = 0;
+    
     private Text textDisplay;
 
     private void Awake()
@@ -19,7 +19,6 @@ public class CountFailAttempt : MonoBehaviour
 
     public void OnPlayerDeath()
     {
-        // totalAttempts++;
         totalAttempts.Int++;
         UpdateTextDisplay();
     }
