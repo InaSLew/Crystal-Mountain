@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Controls spike movement
+/// </summary>
 public class SpikeMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
