@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Controls when player collides with other gameobjects and emits game events accordingly
+/// </summary>
 public class Player : MonoBehaviour
 {
     [SerializeField] private VoidGameEvent playerIsDead;

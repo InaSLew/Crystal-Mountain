@@ -1,14 +1,20 @@
 using UnityEngine;
 
+/// <summary>
+/// Controls player movement and speed (adjustable through editor)
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Run- and jump-related")]
     [SerializeField] private float speed;
     [SerializeField] private float addOnSpeed;
     [SerializeField] private float jumpForce;
-    
-    [SerializeField] private AudioSource jumpSound;
     [SerializeField] private BooleanValue isOnGround;
+    
+    [Header("Sound effect")]
+    [SerializeField] private AudioSource jumpSound;
+
+    [Header("Needed by spike spawns")]
     [SerializeField] private FloatValue distanceTravelled;
     
     private Rigidbody2D rb;
