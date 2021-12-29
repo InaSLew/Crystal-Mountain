@@ -9,6 +9,7 @@ public class StartMenuControl : MonoBehaviour
     [SerializeField] private GameObject start;
     [SerializeField] private GameObject quit;
     [SerializeField] private GameObject credit;
+    [SerializeField] private GameObject creditPage;
     
     private readonly int MainScene = 1;
     private AudioSource selectSound;
@@ -37,8 +38,9 @@ public class StartMenuControl : MonoBehaviour
     {
         SelectAnOption();
         EnterOnSelected();
+        CloseCreditPage();
     }
-    
+
     private void SelectAnOption()
     {
         if (Input.GetKeyDown(KeyCode.S) && accessIndex < allOptions.Length)
@@ -72,8 +74,14 @@ public class StartMenuControl : MonoBehaviour
         selectSound.Play();
         if (selectedOption == start) StartGame();
         else if (selectedOption == quit) QuitGame();
-        else if (selectedOption == credit) Debug.Log("show credit");
+        else if (selectedOption == credit) creditPage.SetActive(true);
     }
+    private void CloseCreditPage()
+    {
+        if (!credit.activeInHierarchy) return;
+        if (Input.GetKeyDown(KeyCode.Q)) creditPage.SetActive(false);
+    }
+    
     private void StartGame() => SceneManager.LoadScene(MainScene);
     private void QuitGame() => Application.Quit();
     private void IncreaseAlphaOnSelectedOption()
