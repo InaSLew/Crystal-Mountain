@@ -2391,7 +2391,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 78cd0c4877de80047959c36f82cc0e86, type: 2}
     - target: {fileID: 758915934486107439, guid: b563317c0bce0f747a7063b83507ae2c, type: 3}
       propertyPath: numberTotalSpikeCandidate.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 758915934486107439, guid: b563317c0bce0f747a7063b83507ae2c, type: 3}
       propertyPath: numberTotalSpikeCandidate.Array.data[0]
