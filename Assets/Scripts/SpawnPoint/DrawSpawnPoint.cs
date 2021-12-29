@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Draws out spike spawns in editor for easier visualization during development
+/// </summary>
 public class DrawSpawnPoint : MonoBehaviour
 {
     private void OnDrawGizmos()

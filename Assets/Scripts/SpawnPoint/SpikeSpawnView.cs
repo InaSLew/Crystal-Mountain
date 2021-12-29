@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Controls initializing the given spike spawn and the coroutine to launch spikes at player
+/// </summary>
 public class SpikeSpawnView : MonoBehaviour
 {
     [Header("Scriptable objects")]

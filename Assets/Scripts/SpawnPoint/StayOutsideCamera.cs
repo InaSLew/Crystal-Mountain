@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Makes the spike spawn stay close to and outside of game view
+/// </summary>
 public class StayOutsideCamera : MonoBehaviour
 {
     private Vector3 offsetOnX;
