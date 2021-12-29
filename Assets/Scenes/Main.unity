@@ -647,7 +647,7 @@ MonoBehaviour:
 
     - Space to jump
 
-    - Left ctrl to dock'
+    - Left ctrl to duck'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8bc0033f4a069cb4b97ebc22ab3ccd33, type: 2}
   m_sharedMaterial: {fileID: 1861098168770176869, guid: 8bc0033f4a069cb4b97ebc22ab3ccd33, type: 2}
