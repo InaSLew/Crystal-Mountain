@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,66 +8,74 @@ public class StartMenuControl : MonoBehaviour
 {
     [SerializeField] private GameObject start;
     [SerializeField] private GameObject quit;
-
-    private GameObject selectedOption;
-    private GameObject idleOption;
+    [SerializeField] private GameObject credit;
+    
     private readonly int MainScene = 1;
-    private AudioSource select;
+    private AudioSource selectSound;
+    
+    // Menu select operation related
+    private GameObject selectedOption;
+    private GameObject[] allOptions;
+    private List<GameObject> idleOptions;
+    private int accessIndex;
 
     private void Awake()
     {
-        select = GetComponent<AudioSource>();
+        selectSound = GetComponent<AudioSource>();
+        allOptions = new[] {start, quit, credit};
+        idleOptions = new List<GameObject>();
+        accessIndex = 0;
     }
 
     private void Start()
     {
-        selectedOption = start;
-        idleOption = quit;
+        selectedOption = allOptions[accessIndex];
         IncreaseAlphaOnSelectedOption();
     }
     
     private void Update()
     {
-        ToggleBetweenStartAndQuit();
+        SelectAnOption();
         EnterOnSelected();
+    }
+    
+    private void SelectAnOption()
+    {
+        if (Input.GetKeyDown(KeyCode.S) && accessIndex < allOptions.Length)
+        {
+            selectSound.Play();
+            accessIndex++;
+        }
+        else if (Input.GetKeyDown(KeyCode.W) && accessIndex > 0)
+        {
+            selectSound.Play();
+            accessIndex--;
+        }
+
+        selectedOption = allOptions[accessIndex];
+        if (idleOptions.Count != 0) idleOptions.Clear();
+        for (var i = 0; i < allOptions.Length; i++)
+        {
+            if (i != accessIndex) idleOptions.Add(allOptions[i]);
+        }
+        
+        IncreaseAlphaOnSelectedOption();
+        foreach (var idleOption in idleOptions)
+        {
+            DecreaseAlphaOnIdleOption(idleOption);
+        }
     }
 
     private void EnterOnSelected()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && selectedOption == start)
-        {
-            select.Play();
-            StartGame();
-        }
-        else if (Input.GetKeyDown(KeyCode.Return) && selectedOption == quit)
-        {
-            select.Play();
-            QuitGame();
-        }
+        if (!Input.GetKeyDown(KeyCode.Return)) return;
+        selectSound.Play();
+        if (selectedOption == start) StartGame();
+        else if (selectedOption == quit) QuitGame();
+        else if (selectedOption == credit) Debug.Log("show credit");
     }
-
     private void StartGame() => SceneManager.LoadScene(MainScene);
-
     private void QuitGame() => Application.Quit();
-
-    private void ToggleBetweenStartAndQuit()
-    {
-        if (Input.GetKeyDown(KeyCode.S) && selectedOption == start)
-        {
-            select.Play();
-            selectedOption = quit;
-            idleOption = start;
-        }
-        else if (Input.GetKeyDown(KeyCode.W) && selectedOption == quit)
-        {
-            select.Play();
-            selectedOption = start;
-            idleOption = quit;
-        }
-        IncreaseAlphaOnSelectedOption();
-        DecreaseAlphaOnIdleOption();
-    }
-
     private void IncreaseAlphaOnSelectedOption()
     {
         var img = selectedOption.GetComponent<TextMeshProUGUI>().GetComponentInChildren<Image>();
@@ -74,8 +83,7 @@ public class StartMenuControl : MonoBehaviour
         tmpColor.a = .4f;
         img.color = tmpColor;
     }
-    
-    private void DecreaseAlphaOnIdleOption()
+    private void DecreaseAlphaOnIdleOption(GameObject idleOption)
     {
         var img = idleOption.GetComponent<TextMeshProUGUI>().GetComponentInChildren<Image>();
         var tmpColor = img.color;
