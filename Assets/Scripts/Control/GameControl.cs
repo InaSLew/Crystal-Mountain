@@ -27,7 +27,7 @@ public class GameControl : MonoBehaviour
 
     public void OnPlayerIsDead()
     {
-        isGameOver.BoolValue = true;
+        // isGameOver.BoolValue = true;
         player.SetActive(false);
         Invoke(nameof(ResetGame), 3f);
     }
@@ -35,7 +35,7 @@ public class GameControl : MonoBehaviour
     public void OnPlayerWin()
     {
         player.SetActive(false);
-        isGameOver.BoolValue = true;
+        // isGameOver.BoolValue = true;
     }
 
     public void QuitGame()

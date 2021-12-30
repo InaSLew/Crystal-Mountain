@@ -11,9 +11,34 @@ public class Spike : MonoBehaviour
     [SerializeField] private BooleanValue playerIsOnGround;
 
     private GameObject player;
+    private Collider2D spikeCollider;
+    private SpriteRenderer spikeRenderer;
+
+    public void OnPlayerIsDead()
+    {
+        spikeCollider.enabled = false;
+        AdjustSpikeAlpha(.3f);
+        Invoke(nameof(EnableCollider), 4.5f);
+    }
+
+    private void EnableCollider()
+    {
+        AdjustSpikeAlpha(1f);
+        spikeCollider.enabled = true;
+    }
+    
+    private void AdjustSpikeAlpha(float value)
+    {
+        var tmpColor = spikeRenderer.color;
+        tmpColor.a = value;
+        spikeRenderer.color = tmpColor;
+    }
+    
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        spikeCollider = GetComponent<Collider2D>();
+        spikeRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -29,10 +54,8 @@ public class Spike : MonoBehaviour
 
     private bool IsPlayerAboveSpike()
     {
-        var playerSprite = player.GetComponent<SpriteRenderer>();
-        var playerLowestBoundOnY = player.transform.position.y - playerSprite.bounds.min.y / 2;
+        var playerLowestColliderBoundOnY = player.GetComponent<Collider2D>().bounds.min.y;
         var spikeHighestOnY = transform.position.y;
-        
-        return playerLowestBoundOnY > spikeHighestOnY;
+        return playerLowestColliderBoundOnY > spikeHighestOnY;
     }
 }
