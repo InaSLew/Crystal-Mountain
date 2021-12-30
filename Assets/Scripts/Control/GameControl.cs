@@ -27,7 +27,6 @@ public class GameControl : MonoBehaviour
 
     public void OnPlayerIsDead()
     {
-        // isGameOver.BoolValue = true;
         player.SetActive(false);
         Invoke(nameof(ResetGame), 3f);
     }
@@ -35,7 +34,6 @@ public class GameControl : MonoBehaviour
     public void OnPlayerWin()
     {
         player.SetActive(false);
-        // isGameOver.BoolValue = true;
     }
 
     public void QuitGame()
@@ -52,5 +50,7 @@ public class GameControl : MonoBehaviour
         isGameOver.BoolValue = false;
         resetGame.Raise(new GenericVoid());
         player.SetActive(true);
+
+        if (SceneManager.GetActiveScene().buildIndex == 2) SceneManager.LoadScene(1);
     }
 }
