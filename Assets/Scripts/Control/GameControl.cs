@@ -33,6 +33,7 @@ public class GameControl : MonoBehaviour
 
     public void OnPlayerWin()
     {
+        isGameOver.BoolValue = true;
         player.SetActive(false);
     }
 
