@@ -12,32 +12,21 @@ public class Spike : MonoBehaviour
 
     private GameObject player;
     private Collider2D spikeCollider;
+    private Collider2D overcomeTrigger;
     private SpriteRenderer spikeRenderer;
 
     public void OnPlayerIsDead()
     {
-        spikeCollider.enabled = false;
+        DisableColliderAndTrigger();
         AdjustSpikeAlpha(.3f);
-        Invoke(nameof(EnableCollider), 4.5f);
+        Invoke(nameof(EnableColliderAndTrigger), 4.5f);
     }
 
-    private void EnableCollider()
-    {
-        AdjustSpikeAlpha(1f);
-        spikeCollider.enabled = true;
-    }
-    
-    private void AdjustSpikeAlpha(float value)
-    {
-        var tmpColor = spikeRenderer.color;
-        tmpColor.a = value;
-        spikeRenderer.color = tmpColor;
-    }
-    
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         spikeCollider = GetComponent<Collider2D>();
+        overcomeTrigger = GetComponentInChildren<Collider2D>();
         spikeRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -57,5 +46,25 @@ public class Spike : MonoBehaviour
         var playerLowestColliderBoundOnY = player.GetComponent<Collider2D>().bounds.min.y;
         var spikeHighestOnY = transform.position.y;
         return playerLowestColliderBoundOnY > spikeHighestOnY;
+    }
+    
+    private void DisableColliderAndTrigger()
+    {
+        spikeCollider.enabled = false;
+        overcomeTrigger.enabled = false;
+    }
+
+    private void EnableColliderAndTrigger()
+    {
+        AdjustSpikeAlpha(1f);
+        spikeCollider.enabled = true;
+        overcomeTrigger.enabled = true;
+    }
+    
+    private void AdjustSpikeAlpha(float value)
+    {
+        var tmpColor = spikeRenderer.color;
+        tmpColor.a = value;
+        spikeRenderer.color = tmpColor;
     }
 }
