@@ -1796,7 +1796,7 @@ MonoBehaviour:
   numberOvercomeSpikes: {fileID: 11400000, guid: c5f770638a084044096b83fa5e2428ed, type: 2}
   playerSpeedUp: {fileID: 11400000, guid: 51d933c8880d1bb479daa7551b23c4a6, type: 2}
   hasWinCondition: {fileID: 11400000, guid: 15d0b37f0a4d4ef4e944c666d9b4ba54, type: 2}
-  speedUpThreshold: 5
+  speedUpThreshold: 10
   numberTotalSpikes: {fileID: 11400000, guid: 78cd0c4877de80047959c36f82cc0e86, type: 2}
 --- !u!114 &1890955982
 MonoBehaviour:
